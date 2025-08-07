@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Styles -->
-      <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
     <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION END ==================== -->
 </head>
 <body>
@@ -34,45 +34,45 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar">
-                    <a href="/" class="logo">
+                    <a href="#" class="logo">
                         <i class="fas fa-leaf"></i> MCU
                     </a>
                     
                     <!-- Desktop Navigation -->
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Inicio</a>
+                            <a href="#" class="nav-link">Inicio</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="/quienes-somos" class="nav-link">¿Quiénes Somos?</a>
+                            <a href="#quienes-somos" class="nav-link">¿Quiénes Somos?</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="/productos" class="nav-link">Productos</a>
+                            <a href="#productos" class="nav-link">Productos</a>
                             <!-- Mega Menu for Products -->
                             <div class="mega-menu">
                                 <div class="mega-menu-section">
                                     <h4 class="mega-menu-title">Categorías Populares</h4>
-                                    <a href="/productos#vitaminas" class="mega-menu-link">Suplementos Vitamínicos</a>
-                                    <a href="/productos#hierbas" class="mega-menu-link">Hierbas Medicinales</a>
-                                    <a href="/productos#aceites" class="mega-menu-link">Aceites Esenciales</a>
+                                    <a href="#productos" class="mega-menu-link">Suplementos Vitamínicos</a>
+                                    <a href="#productos" class="mega-menu-link">Hierbas Medicinales</a>
+                                    <a href="#productos" class="mega-menu-link">Aceites Esenciales</a>
                                 </div>
                                 <div class="mega-menu-section">
                                     <h4 class="mega-menu-title">Salud Específica</h4>
-                                    <a href="/productos#digestivos" class="mega-menu-link">Salud Digestiva</a>
-                                    <a href="/productos#articular" class="mega-menu-link">Salud Articular</a>
-                                    <a href="/productos#mental" class="mega-menu-link">Salud Mental</a>
+                                    <a href="#productos" class="mega-menu-link">Salud Digestiva</a>
+                                    <a href="#productos" class="mega-menu-link">Salud Articular</a>
+                                    <a href="#productos" class="mega-menu-link">Salud Mental</a>
                                 </div>
                             </div>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="/estudios" class="nav-link">Estudios y Vivencias</a>
+                            <a href="#estudios" class="nav-link">Estudios y Vivencias</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="/test-rapidos" class="nav-link">Test Rápidos</a>
+                            <a href="#test-rapidos" class="nav-link">Test Rápidos</a>
                         </li>
                         
                         <li class="nav-item">
@@ -119,7 +119,7 @@
                 </div>
                 
                 <div class="mt-lg">
-                    <a href="/productos" class="btn btn-primary btn-lg me-3">Explorar Productos</a>
+                    <a href="#productos" class="btn btn-primary btn-lg me-3">Explorar Productos</a>
                     <button class="btn btn-secondary btn-lg" onclick="openChat('¡Hola! Me gustaría conocer más sobre sus productos y servicios.')">Hablar con MCU</button>
                 </div>
             </div>
@@ -128,7 +128,7 @@
     <!-- ==================== HERO SECTION WITH VIDEO - EDITABLE SECTION END ==================== -->
 
     <!-- ==================== FEATURED CATEGORIES - EDITABLE SECTION START ==================== -->
-    <section class="categories">
+    <section class="categories" id="productos">
         <div class="container">
             <h2 class="section-title">Nuestras Categorías Populares</h2>
             <p class="text-center mb-lg">Descubre nuestra amplia gama de productos naturales especializados para tu salud y bienestar</p>
@@ -143,19 +143,21 @@
                     <p class="category-description">
                         Vitaminas esenciales y suplementos de alta calidad para fortalecer tu sistema inmunológico y mejorar tu energía diaria.
                     </p>
+                    <button class="btn btn-outline category-btn" onclick="showProducts('vitaminas')">Ver Productos</button>
                 </div>
-
+                
                 <!-- Category 2: Hierbas Medicinales -->
                 <div class="category-card" data-category="hierbas">
                     <div class="category-icon">
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <h3 class="category-title">Hierbas Medicinales</h3>
                     <p class="category-description">
-                        Remedios naturales a base de plantas medicinales tradicionales, cuidadosamente seleccionadas por su pureza y efectividad.
+                        Remedios naturales tradicionales y hierbas medicinales cuidadosamente seleccionadas para tu salud integral.
                     </p>
+                    <button class="btn btn-outline category-btn" onclick="showProducts('hierbas')">Ver Productos</button>
                 </div>
-
+                
                 <!-- Category 3: Aceites Esenciales -->
                 <div class="category-card" data-category="aceites">
                     <div class="category-icon">
@@ -163,175 +165,191 @@
                     </div>
                     <h3 class="category-title">Aceites Esenciales</h3>
                     <p class="category-description">
-                        Aceites puros y naturales para aromaterapia, relajación y cuidado personal, extraídos por métodos tradicionales.
+                        Aceites puros y naturales para aromaterapia, relajación y bienestar emocional y físico.
                     </p>
+                    <button class="btn btn-outline category-btn" onclick="showProducts('aceites')">Ver Productos</button>
                 </div>
-
-                <!-- Category 4: Salud Digestiva -->
-                <div class="category-card" data-category="digestivos">
-                    <div class="category-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="category-title">Salud Digestiva</h3>
-                    <p class="category-description">
-                        Probióticos, enzimas digestivas y productos naturales para mantener un sistema digestivo saludable y equilibrado.
-                    </p>
-                </div>
-
-                <!-- Category 5: Relajación y Sueño -->
-                <div class="category-card" data-category="relajacion">
-                    <div class="category-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3 class="category-title">Relajación y Sueño</h3>
-                    <p class="category-description">
-                        Productos naturales para promover la relajación, reducir el estrés y mejorar la calidad de tu descanso nocturno.
-                    </p>
-                </div>
-
-                <!-- Category 6: Salud Femenina -->
-                <div class="category-card" data-category="femenina">
-                    <div class="category-icon">
-                        <i class="fas fa-female"></i>
-                    </div>
-                    <h3 class="category-title">Salud Femenina</h3>
-                    <p class="category-description">
-                        Productos especializados para el bienestar integral de la mujer en todas las etapas de la vida.
-                    </p>
+            </div>
+            
+            <!-- Products Display Section -->
+            <div class="products-section" id="productsSection" style="display: none;">
+                <h3 class="products-title" id="productsTitle">Productos</h3>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded dynamically -->
                 </div>
             </div>
         </div>
     </section>
     <!-- ==================== FEATURED CATEGORIES - EDITABLE SECTION END ==================== -->
 
-    <!-- ==================== ABOUT US PREVIEW - EDITABLE SECTION START ==================== -->
-    <section class="about-preview" style="padding: var(--spacing-xl) 0; background-color: var(--color-white);">
+    <!-- ==================== HEALTH TESTS SECTION - EDITABLE SECTION START ==================== -->
+    <section class="health-tests" id="test-rapidos">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title text-left">¿Quiénes Somos?</h2>
-                    <p class="mb-md">
-                        En MCU somos especialistas en medicina holística con más de 15 años de experiencia ayudando a personas a mejorar su bienestar integral a través de productos naturales de la más alta calidad.
-                    </p>
-                    <p class="mb-md">
-                        Nuestro equipo de profesionales está comprometido con ofrecerte soluciones naturales respaldadas por la ciencia y la tradición milenaria de la medicina natural.
-                    </p>
-                    <a href="/quienes-somos" class="btn btn-primary">Conoce Más Sobre Nosotros</a>
+            <h2 class="section-title">Tests de Salud Rápidos</h2>
+            <p class="text-center mb-lg">Evalúa tu estado de salud actual con nuestros tests especializados</p>
+            
+            <div class="tests-grid">
+                <div class="test-card">
+                    <div class="test-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Test de Salud Digestiva</h3>
+                    <p>Evalúa tu sistema digestivo y recibe recomendaciones personalizadas</p>
+                    <button class="btn btn-primary" onclick="startHealthTest('digestivo')">Comenzar Test</button>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://pixabay.com/get/g84d2f41b10ed36ca54e310110da64d9e3ce0baad2e70ba26704522c962b55befaa2d89f9e9173d45bd5bfe0faeb5ed76fc3a0b0296f8d3124deb70142b141547_1280.jpg" 
-                         alt="Equipo MCU Medicina Holística" 
-                         class="img-fluid rounded"
-                         style="max-height: 400px; width: 100%; object-fit: cover;">
+                
+                <div class="test-card">
+                    <div class="test-icon">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3>Test de Energía</h3>
+                    <p>Descubre tu nivel de energía y vitalidad actual</p>
+                    <button class="btn btn-primary" onclick="startHealthTest('energia')">Comenzar Test</button>
+                </div>
+                
+                <div class="test-card">
+                    <div class="test-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Test de Bienestar Mental</h3>
+                    <p>Evalúa tu estado emocional y mental para un bienestar integral</p>
+                    <button class="btn btn-primary" onclick="startHealthTest('mental')">Comenzar Test</button>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ==================== ABOUT US PREVIEW - EDITABLE SECTION END ==================== -->
+    <!-- ==================== HEALTH TESTS SECTION - EDITABLE SECTION END ==================== -->
 
-    <!-- ==================== TESTIMONIALS SECTION - EDITABLE SECTION START ==================== -->
-    <section class="testimonials" style="padding: var(--spacing-xl) 0; background-color: var(--color-gray-light);">
+    <!-- ==================== ABOUT SECTION - EDITABLE SECTION START ==================== -->
+    <section class="about" id="quienes-somos">
         <div class="container">
-            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-md">
-                    <div class="testimonial-card" style="background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
-                        <div class="testimonial-rating mb-sm">
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">¿Quiénes Somos?</h2>
+                    <p class="lead">
+                        MCU es un centro especializado en medicina holística comprometido con tu bienestar integral a través de productos naturales de la más alta calidad.
+                    </p>
+                    <p>
+                        Nuestro equipo de expertos en medicina natural trabaja incansablemente para ofrecerte soluciones efectivas y seguras que complementen tu estilo de vida saludable. Creemos en el poder sanador de la naturaleza y en la importancia de tratar al ser humano de manera integral.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Productos certificados y de alta calidad</span>
                         </div>
-                        <p class="testimonial-text">"Los productos de MCU han transformado completamente mi bienestar. El asesoramiento personalizado de MCU es excepcional."</p>
-                        <div class="testimonial-author">
-                            <strong>María González</strong>
-                            <small class="text-muted">Cliente satisfecha</small>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Asesoramiento especializado</span>
                         </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Enfoque holístico e integral</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medicina Holística MCU">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== ABOUT SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== STUDIES SECTION - EDITABLE SECTION START ==================== -->
+    <section class="studies" id="estudios">
+        <div class="container">
+            <h2 class="section-title">Estudios y Vivencias</h2>
+            <p class="text-center mb-lg">Conoce las investigaciones y experiencias que respaldan nuestros productos</p>
+            
+            <div class="studies-grid">
+                <div class="study-card">
+                    <div class="study-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Estudio científico">
+                    </div>
+                    <div class="study-content">
+                        <h3>Efectividad de la Medicina Holística</h3>
+                        <p>Estudios recientes demuestran la efectividad de los tratamientos holísticos en el bienestar general.</p>
+                        <a href="#" class="btn btn-outline">Leer Más</a>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 mb-md">
-                    <div class="testimonial-card" style="background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
-                        <div class="testimonial-rating mb-sm">
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                        </div>
-                        <p class="testimonial-text">"La calidad de los suplementos es extraordinaria. He mejorado mi energía y salud digestiva notablemente."</p>
-                        <div class="testimonial-author">
-                            <strong>Carlos Ramírez</strong>
-                            <small class="text-muted">Cliente frecuente</small>
-                        </div>
+                <div class="study-card">
+                    <div class="study-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Productos naturales">
+                    </div>
+                    <div class="study-content">
+                        <h3>Testimonios de Nuestros Clientes</h3>
+                        <p>Experiencias reales de personas que han mejorado su calidad de vida con nuestros productos.</p>
+                        <a href="#" class="btn btn-outline">Ver Testimonios</a>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 mb-md">
-                    <div class="testimonial-card" style="background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
-                        <div class="testimonial-rating mb-sm">
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                            <i class="fas fa-star" style="color: var(--color-apple-green);"></i>
-                        </div>
-                        <p class="testimonial-text">"El chat con MCU me ayudó a encontrar exactamente lo que necesitaba para mis problemas de sueño. ¡Excelente servicio!"</p>
-                        <div class="testimonial-author">
-                            <strong>Ana Martínez</strong>
-                            <small class="text-muted">Nueva cliente</small>
-                        </div>
+                <div class="study-card">
+                    <div class="study-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Investigación">
+                    </div>
+                    <div class="study-content">
+                        <h3>Investigación Continua</h3>
+                        <p>Nuestro compromiso con la investigación constante para ofrecer los mejores productos.</p>
+                        <a href="#" class="btn btn-outline">Conoce Más</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ==================== TESTIMONIALS SECTION - EDITABLE SECTION END ==================== -->
-
-    <!-- ==================== CALL TO ACTION - EDITABLE SECTION START ==================== -->
-    <section class="cta" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-apple-green), var(--color-turquoise));">
-        <div class="container text-center">
-            <h2 style="color: var(--color-white); margin-bottom: var(--spacing-md);">¿Listo para Mejorar tu Bienestar?</h2>
-            <p style="color: var(--color-white); font-size: var(--font-size-large); margin-bottom: var(--spacing-lg); opacity: 0.9;">
-                Realiza nuestros test de salud gratuitos y recibe recomendaciones personalizadas de MCU
-            </p>
-            <div>
-                <a href="/test-rapidos" class="btn btn-white btn-lg me-3" style="background-color: var(--color-white); color: var(--color-apple-green);">Hacer Test de Salud</a>
-                <button class="btn btn-outline btn-lg" onclick="openChat('Quiero hacer una consulta personalizada sobre mi salud')" style="border-color: var(--color-white); color: var(--color-white);">Consulta Personalizada</button>
-            </div>
-        </div>
-    </section>
-    <!-- ==================== CALL TO ACTION - EDITABLE SECTION END ==================== -->
+    <!-- ==================== STUDIES SECTION - EDITABLE SECTION END ==================== -->
 
     <!-- ==================== CONTACT SECTION - EDITABLE SECTION START ==================== -->
-    <section id="contacto" class="contact" style="padding: var(--spacing-xl) 0;">
+    <section class="contact" id="contacto">
         <div class="container">
             <h2 class="section-title">Contáctanos</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
+            <p class="text-center mb-lg">¿Tienes preguntas? Estamos aquí para ayudarte en tu camino hacia el bienestar</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@mcu007.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horarios de Atención</h4>
+                            <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
                     <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Nombre Completo</label>
-                                    <input type="text" class="form-input" id="name" name="name" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-input" id="email" name="email" required>
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-textarea" id="message" name="message" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                            <label for="contactName">Nombre</label>
+                            <input type="text" id="contactName" name="name" required>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" required>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Mensaje</label>
+                            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
@@ -345,38 +363,21 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>MCU - Medicina Holística</h3>
-                    <p>Especialistas en medicina natural y productos holísticos para tu bienestar integral.</p>
+                    <p>Tu centro especializado en productos naturales y medicina holística para un bienestar integral.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="social-link" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Enlaces Rápidos</h3>
-                    <p><a href="/">Inicio</a></p>
-                    <p><a href="/quienes-somos">¿Quiénes Somos?</a></p>
-                    <p><a href="/productos">Productos</a></p>
-                    <p><a href="/estudios">Estudios y Vivencias</a></p>
-                    <p><a href="/test-rapidos">Test Rápidos</a></p>
-                </div>
-                
-                <div class="footer-section">
                     <h3>Categorías Populares</h3>
-                    <p><a href="/productos#vitaminas">Suplementos Vitamínicos</a></p>
-                    <p><a href="/productos#hierbas">Hierbas Medicinales</a></p>
-                    <p><a href="/productos#aceites">Aceites Esenciales</a></p>
-                    <p><a href="/productos#digestivos">Salud Digestiva</a></p>
+                    <p><a href="#productos">Suplementos Vitamínicos</a></p>
+                    <p><a href="#productos">Hierbas Medicinales</a></p>
+                    <p><a href="#productos">Aceites Esenciales</a></p>
+                    <p><a href="#productos">Salud Digestiva</a></p>
                 </div>
                 
                 <div class="footer-section">
@@ -475,10 +476,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Categories Data -->
-    <script src="/static/js/Categorias.js"></script>
+    <script src="static/js/Categorias.js"></script>
     
     <!-- Main Application JS -->
-    <script src="/static/js/main.js"></script>
+    <script src="static/js/main.js"></script>
     <!-- ==================== JAVASCRIPT SECTION - EDITABLE SECTION END ==================== -->
 </body>
 </html>
