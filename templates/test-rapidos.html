@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ==================== META TAGS - EDITABLE SECTION START ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test de salud rápidos y gratuitos de MCU. Evalúa tu bienestar digestivo, energético, mental y más. Recibe recomendaciones personalizadas.">
+    <meta name="keywords" content="test salud, evaluación bienestar, test digestivo, test energía, test mental, MCU medicina holística">
+    <title>Test Rápidos de Salud - MCU Medicina Holística</title>
+    <!-- ==================== META TAGS - EDITABLE SECTION END ==================== -->
+    
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION START ==================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION END ==================== -->
+</head>
+<body>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION START ==================== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar">
+                    <a href="/" class="logo">
+                        <i class="fas fa-leaf"></i> MCU
+                    </a>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/quienes-somos" class="nav-link">¿Quiénes Somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/productos" class="nav-link">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/estudios" class="nav-link">Estudios y Vivencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/test-rapidos" class="nav-link active">Test Rápidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline login-btn">Iniciar Sesión</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary register-btn">Registrarse</button>
+                        </li>
+                        <li class="nav-item">
+                            <span class="user-info" style="display: none;"></span>
+                            <button class="btn btn-secondary logout-btn" style="display: none;">Cerrar Sesión</button>
+                        </li>
+                    </ul>
+                    
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== PAGE HERO - EDITABLE SECTION START ==================== -->
+    <section class="page-hero" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-turquoise), var(--color-apple-green));">
+        <div class="container">
+            <div class="text-center">
+                <h1 style="color: var(--color-white); font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">Test Rápidos de Salud</h1>
+                <p style="color: var(--color-white); font-size: var(--font-size-large); opacity: 0.9;">Evalúa tu bienestar en diferentes áreas y recibe recomendaciones personalizadas de MCU</p>
+                <div style="margin-top: var(--spacing-lg);">
+                    <div style="background: rgba(255,255,255,0.1); padding: var(--spacing-md); border-radius: var(--border-radius-lg); display: inline-block;">
+                        <p style="color: var(--color-white); margin: 0; font-size: var(--font-size-medium);">
+                            <i class="fas fa-info-circle"></i> Los test son gratuitos y tus resultados son confidenciales
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PAGE HERO - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== TESTS SECTION - EDITABLE SECTION START ==================== -->
+    <section class="tests" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2 class="section-title">Nuestros Test de Evaluación</h2>
+                <p>Completa los test que más te interesen y descubre cómo MCU puede ayudarte a mejorar tu bienestar</p>
+            </div>
+
+            <!-- TEST 1: SALUD DIGESTIVA - EDITABLE SECTION START -->
+            <div class="test-item">
+                <div class="test-header">
+                    <h3 class="test-title">
+                        <i class="fas fa-stomach" style="margin-right: var(--spacing-xs); color: var(--color-turquoise);"></i>
+                        Test de Salud Digestiva
+                    </h3>
+                    <span class="test-toggle">▼</span>
+                </div>
+                <div class="test-content">
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-gray-dark);">
+                        Evalúa el estado de tu sistema digestivo y descubre si podrías beneficiarte de probióticos, enzimas digestivas o cambios en tu alimentación.
+                    </p>
+                    
+                    <form id="testDigestivo">
+                        <div class="test-question">
+                            <label>1. ¿Con qué frecuencia experimentas hinchazón abdominal?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="hinchazón_nunca" name="hinchazón" value="nunca">
+                                    <label for="hinchazón_nunca">Nunca</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="hinchazón_aveces" name="hinchazón" value="aveces">
+                                    <label for="hinchazón_aveces">A veces (1-2 veces por semana)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="hinchazón_frecuente" name="hinchazón" value="frecuente">
+                                    <label for="hinchazón_frecuente">Frecuentemente (3+ veces por semana)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>2. ¿Tienes problemas de estreñimiento o diarrea?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="intestinal_no" name="intestinal" value="no">
+                                    <label for="intestinal_no">No, mi tránsito es regular</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="intestinal_ocasional" name="intestinal" value="ocasional">
+                                    <label for="intestinal_ocasional">Ocasionalmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="intestinal_frecuente" name="intestinal" value="frecuente">
+                                    <label for="intestinal_frecuente">Frecuentemente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>3. ¿Sientes gases o flatulencias excesivas?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="gases_no" name="gases" value="no">
+                                    <label for="gases_no">Raramente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="gases_aveces" name="gases" value="aveces">
+                                    <label for="gases_aveces">A veces</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="gases_si" name="gases" value="si">
+                                    <label for="gases_si">Frecuentemente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>4. ¿Has tomado antibióticos en los últimos 6 meses?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="antibioticos_no" name="antibioticos" value="no">
+                                    <label for="antibioticos_no">No</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="antibioticos_si" name="antibioticos" value="si">
+                                    <label for="antibioticos_si">Sí, una vez</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="antibioticos_varias" name="antibioticos" value="varias">
+                                    <label for="antibioticos_varias">Sí, varias veces</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>5. ¿Experimentas acidez estomacal o reflujo?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="acidez_no" name="acidez" value="no">
+                                    <label for="acidez_no">Nunca</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="acidez_ocasional" name="acidez" value="ocasional">
+                                    <label for="acidez_ocasional">Ocasionalmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="acidez_frecuente" name="acidez" value="frecuente">
+                                    <label for="acidez_frecuente">Frecuentemente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-md">
+                            <button type="button" class="btn btn-primary" onclick="calculateTestResult('testDigestivo')">
+                                Obtener Resultados
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="test-result" id="testDigestivo_result">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- TEST 1: SALUD DIGESTIVA - EDITABLE SECTION END -->
+
+            <!-- TEST 2: ENERGÍA Y VITALIDAD - EDITABLE SECTION START -->
+            <div class="test-item">
+                <div class="test-header">
+                    <h3 class="test-title">
+                        <i class="fas fa-bolt" style="margin-right: var(--spacing-xs); color: var(--color-apple-green);"></i>
+                        Test de Energía y Vitalidad
+                    </h3>
+                    <span class="test-toggle">▼</span>
+                </div>
+                <div class="test-content">
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-gray-dark);">
+                        Determina si tus niveles de energía son óptimos y descubre qué suplementos naturales podrían ayudarte a recuperar tu vitalidad.
+                    </p>
+                    
+                    <form id="testEnergia">
+                        <div class="test-question">
+                            <label>1. ¿Cómo te sientes al despertar por las mañanas?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="despertar_energico" name="despertar" value="energico">
+                                    <label for="despertar_energico">Enérgico y descansado</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="despertar_normal" name="despertar" value="normal">
+                                    <label for="despertar_normal">Relativamente bien</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="despertar_cansado" name="despertar" value="cansado">
+                                    <label for="despertar_cansado">Cansado y necesito tiempo para activarme</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>2. ¿Experimentas una caída de energía durante el día?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="caida_no" name="caida_energia" value="no">
+                                    <label for="caida_no">No, mantengo energía constante</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="caida_tarde" name="caida_energia" value="tarde">
+                                    <label for="caida_tarde">Sí, principalmente en la tarde</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="caida_varias" name="caida_energia" value="varias">
+                                    <label for="caida_varias">Sí, varias veces al día</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>3. ¿Dependes del café o estimulantes para funcionar?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="estimulantes_no" name="estimulantes" value="no">
+                                    <label for="estimulantes_no">No, tengo energía natural</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="estimulantes_poco" name="estimulantes" value="poco">
+                                    <label for="estimulantes_poco">Ocasionalmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="estimulantes_mucho" name="estimulantes" value="mucho">
+                                    <label for="estimulantes_mucho">Sí, necesito varios cafés al día</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>4. ¿Cómo calificarías tu resistencia física?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="resistencia_alta" name="resistencia" value="alta">
+                                    <label for="resistencia_alta">Excelente, puedo hacer ejercicio sin problemas</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="resistencia_media" name="resistencia" value="media">
+                                    <label for="resistencia_media">Regular, me canso con ejercicio moderado</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="resistencia_baja" name="resistencia" value="baja">
+                                    <label for="resistencia_baja">Baja, me fatigo fácilmente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>5. ¿Tienes dificultades para concentrarte por fatiga mental?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="concentracion_no" name="concentracion" value="no">
+                                    <label for="concentracion_no">No, mi concentración es buena</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="concentracion_aveces" name="concentracion" value="aveces">
+                                    <label for="concentracion_aveces">A veces, especialmente por la tarde</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="concentracion_frecuente" name="concentracion" value="frecuente">
+                                    <label for="concentracion_frecuente">Frecuentemente, me cuesta enfocarme</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-md">
+                            <button type="button" class="btn btn-primary" onclick="calculateTestResult('testEnergia')">
+                                Obtener Resultados
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="test-result" id="testEnergia_result">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- TEST 2: ENERGÍA Y VITALIDAD - EDITABLE SECTION END -->
+
+            <!-- TEST 3: ESTRÉS Y BIENESTAR MENTAL - EDITABLE SECTION START -->
+            <div class="test-item">
+                <div class="test-header">
+                    <h3 class="test-title">
+                        <i class="fas fa-brain" style="margin-right: var(--spacing-xs); color: var(--color-olive);"></i>
+                        Test de Estrés y Bienestar Mental
+                    </h3>
+                    <span class="test-toggle">▼</span>
+                </div>
+                <div class="test-content">
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-gray-dark);">
+                        Evalúa tu nivel de estrés y bienestar mental para descubrir si adaptógenos, omega-3 o productos para relajación podrían beneficiarte.
+                    </p>
+                    
+                    <form id="testEstres">
+                        <div class="test-question">
+                            <label>1. ¿Cómo calificarías tu nivel de estrés actual?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="estres_bajo" name="nivel_estres" value="bajo">
+                                    <label for="estres_bajo">Bajo, me siento relajado la mayor parte del tiempo</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="estres_medio" name="nivel_estres" value="medio">
+                                    <label for="estres_medio">Moderado, tengo momentos de estrés</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="estres_alto" name="nivel_estres" value="alto">
+                                    <label for="estres_alto">Alto, me siento estresado frecuentemente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>2. ¿Tienes problemas para conciliar el sueño?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="sueño_no" name="problemas_sueño" value="no">
+                                    <label for="sueño_no">No, duermo bien</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="sueño_aveces" name="problemas_sueño" value="aveces">
+                                    <label for="sueño_aveces">A veces me cuesta dormir</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="sueño_frecuente" name="problemas_sueño" value="frecuente">
+                                    <label for="sueño_frecuente">Frecuentemente tengo insomnio</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>3. ¿Experimentas ansiedad o nerviosismo?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="ansiedad_no" name="ansiedad" value="no">
+                                    <label for="ansiedad_no">Raramente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="ansiedad_ocasional" name="ansiedad" value="ocasional">
+                                    <label for="ansiedad_ocasional">En situaciones específicas</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="ansiedad_frecuente" name="ansiedad" value="frecuente">
+                                    <label for="ansiedad_frecuente">Frecuentemente sin razón aparente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>4. ¿Tu estado de ánimo varía significativamente durante el día?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="humor_estable" name="cambios_humor" value="estable">
+                                    <label for="humor_estable">No, mi estado de ánimo es bastante estable</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="humor_aveces" name="cambios_humor" value="aveces">
+                                    <label for="humor_aveces">A veces tengo altibajos</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="humor_frecuente" name="cambios_humor" value="frecuente">
+                                    <label for="humor_frecuente">Sí, mi humor cambia mucho</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>5. ¿Te sientes abrumado por tus responsabilidades?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="abrumado_no" name="abrumado" value="no">
+                                    <label for="abrumado_no">No, manejo bien mis responsabilidades</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="abrumado_aveces" name="abrumado" value="aveces">
+                                    <label for="abrumado_aveces">A veces me siento sobrepasado</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="abrumado_frecuente" name="abrumado" value="frecuente">
+                                    <label for="abrumado_frecuente">Frecuentemente me siento abrumado</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-md">
+                            <button type="button" class="btn btn-primary" onclick="calculateTestResult('testEstres')">
+                                Obtener Resultados
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="test-result" id="testEstres_result">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- TEST 3: ESTRÉS Y BIENESTAR MENTAL - EDITABLE SECTION END -->
+
+            <!-- TEST 4: SALUD INMUNOLÓGICA - EDITABLE SECTION START -->
+            <div class="test-item">
+                <div class="test-header">
+                    <h3 class="test-title">
+                        <i class="fas fa-shield-alt" style="margin-right: var(--spacing-xs); color: var(--color-turquoise);"></i>
+                        Test de Salud Inmunológica
+                    </h3>
+                    <span class="test-toggle">▼</span>
+                </div>
+                <div class="test-content">
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-gray-dark);">
+                        Evalúa la fortaleza de tu sistema inmunológico y descubre si vitaminas, minerales o hierbas específicas podrían fortalecerlo.
+                    </p>
+                    
+                    <form id="testInmune">
+                        <div class="test-question">
+                            <label>1. ¿Con qué frecuencia te enfermas de resfriados o gripe?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="resfriados_raro" name="frecuencia_resfriados" value="raro">
+                                    <label for="resfriados_raro">Raramente (menos de 1 vez al año)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="resfriados_normal" name="frecuencia_resfriados" value="normal">
+                                    <label for="resfriados_normal">Ocasionalmente (1-2 veces al año)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="resfriados_frecuente" name="frecuencia_resfriados" value="frecuente">
+                                    <label for="resfriados_frecuente">Frecuentemente (3+ veces al año)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>2. ¿Cuánto tiempo tardas en recuperarte de una enfermedad?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="recuperacion_rapida" name="tiempo_recuperacion" value="rapida">
+                                    <label for="recuperacion_rapida">Rápidamente (2-3 días)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="recuperacion_normal" name="tiempo_recuperacion" value="normal">
+                                    <label for="recuperacion_normal">Tiempo normal (1 semana)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="recuperacion_lenta" name="tiempo_recuperacion" value="lenta">
+                                    <label for="recuperacion_lenta">Lentamente (más de 1 semana)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>3. ¿Tienes alergias estacionales o alimentarias?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="alergias_no" name="alergias" value="no">
+                                    <label for="alergias_no">No tengo alergias conocidas</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="alergias_leves" name="alergias" value="leves">
+                                    <label for="alergias_leves">Alergias leves ocasionales</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="alergias_severas" name="alergias" value="severas">
+                                    <label for="alergias_severas">Alergias múltiples o severas</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>4. ¿Cómo es tu exposición a la luz solar?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="sol_adecuada" name="exposicion_sol" value="adecuada">
+                                    <label for="sol_adecuada">Adecuada, salgo al sol regularmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="sol_poca" name="exposicion_sol" value="poca">
+                                    <label for="sol_poca">Poca, principalmente en interiores</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="sol_minima" name="exposicion_sol" value="minima">
+                                    <label for="sol_minima">Mínima, paso la mayoría del tiempo en interiores</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>5. ¿Sientes que tus heridas sanan lentamente?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="cicatrizacion_rapida" name="cicatrizacion" value="rapida">
+                                    <label for="cicatrizacion_rapida">No, mis heridas sanan rápidamente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="cicatrizacion_normal" name="cicatrizacion" value="normal">
+                                    <label for="cicatrizacion_normal">Sanan en tiempo normal</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="cicatrizacion_lenta" name="cicatrizacion" value="lenta">
+                                    <label for="cicatrizacion_lenta">Sí, tardan más de lo normal en sanar</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-md">
+                            <button type="button" class="btn btn-primary" onclick="calculateTestResult('testInmune')">
+                                Obtener Resultados
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="test-result" id="testInmune_result">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- TEST 4: SALUD INMUNOLÓGICA - EDITABLE SECTION END -->
+
+            <!-- TEST 5: PESO Y METABOLISMO - EDITABLE SECTION START -->
+            <div class="test-item">
+                <div class="test-header">
+                    <h3 class="test-title">
+                        <i class="fas fa-weight" style="margin-right: var(--spacing-xs); color: var(--color-apple-green);"></i>
+                        Test de Peso y Metabolismo
+                    </h3>
+                    <span class="test-toggle">▼</span>
+                </div>
+                <div class="test-content">
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-gray-dark);">
+                        Evalúa tu metabolismo y patrones de peso para descubrir si termogénicos naturales, fibras o reguladores metabólicos podrían ayudarte.
+                    </p>
+                    
+                    <form id="testPeso">
+                        <div class="test-question">
+                            <label>1. ¿Cómo describirías tu peso actual?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="peso_ideal" name="peso_actual" value="ideal">
+                                    <label for="peso_ideal">Ideal para mi estatura y constitución</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="peso_sobrepeso" name="peso_actual" value="sobrepeso">
+                                    <label for="peso_sobrepeso">Ligeramente por encima de mi peso ideal</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="peso_exceso" name="peso_actual" value="exceso">
+                                    <label for="peso_exceso">Significativamente por encima de mi peso ideal</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>2. ¿Tienes antojos frecuentes de comida, especialmente dulces?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="antojos_no" name="antojos" value="no">
+                                    <label for="antojos_no">No, controlo bien mis antojos</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="antojos_aveces" name="antojos" value="aveces">
+                                    <label for="antojos_aveces">A veces, especialmente por la tarde/noche</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="antojos_frecuente" name="antojos" value="frecuente">
+                                    <label for="antojos_frecuente">Frecuentemente, es difícil resistirlos</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>3. ¿Cómo calificarías tu metabolismo?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="metabolismo_rapido" name="metabolismo" value="rapido">
+                                    <label for="metabolismo_rapido">Rápido, puedo comer sin ganar peso fácilmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="metabolismo_normal" name="metabolismo" value="normal">
+                                    <label for="metabolismo_normal">Normal, gano/pierdo peso gradualmente</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="metabolismo_lento" name="metabolismo" value="lento">
+                                    <label for="metabolismo_lento">Lento, gano peso fácilmente y me cuesta perderlo</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>4. ¿Retienes líquidos o sientes hinchazón frecuentemente?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="retencion_no" name="retencion_liquidos" value="no">
+                                    <label for="retencion_no">No, no tengo problemas de retención</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="retencion_ocasional" name="retencion_liquidos" value="ocasional">
+                                    <label for="retencion_ocasional">Ocasionalmente, especialmente antes del período (mujeres)</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="retencion_frecuente" name="retencion_liquidos" value="frecuente">
+                                    <label for="retencion_frecuente">Frecuentemente, me siento hinchado/a</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="test-question">
+                            <label>5. ¿Haces ejercicio regularmente?</label>
+                            <div class="test-options">
+                                <div class="test-option">
+                                    <input type="radio" id="ejercicio_regular" name="ejercicio" value="regular">
+                                    <label for="ejercicio_regular">Sí, 3+ veces por semana</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="ejercicio_ocasional" name="ejercicio" value="ocasional">
+                                    <label for="ejercicio_ocasional">Ocasionalmente, 1-2 veces por semana</label>
+                                </div>
+                                <div class="test-option">
+                                    <input type="radio" id="ejercicio_sedentario" name="ejercicio" value="sedentario">
+                                    <label for="ejercicio_sedentario">Raramente, llevo una vida sedentaria</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-md">
+                            <button type="button" class="btn btn-primary" onclick="calculateTestResult('testPeso')">
+                                Obtener Resultados
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="test-result" id="testPeso_result">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- TEST 5: PESO Y METABOLISMO - EDITABLE SECTION END -->
+
+        </div>
+    </section>
+    <!-- ==================== TESTS SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== DISCLAIMER SECTION - EDITABLE SECTION START ==================== -->
+    <section class="disclaimer" style="padding: var(--spacing-lg) 0; background-color: var(--color-gray-light);">
+        <div class="container">
+            <div class="text-center">
+                <h3 style="color: var(--color-olive); margin-bottom: var(--spacing-md);">Información Importante</h3>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="color: var(--color-gray-dark); margin-bottom: var(--spacing-sm);">
+                        <i class="fas fa-exclamation-triangle" style="color: var(--color-turquoise); margin-right: var(--spacing-xs);"></i>
+                        <strong>Los resultados de estos test son orientativos y no constituyen un diagnóstico médico.</strong>
+                    </p>
+                    <p style="color: var(--color-gray-dark); margin-bottom: var(--spacing-sm);">
+                        Siempre consulta con un profesional de la salud antes de iniciar cualquier suplementación o cambio en tu estilo de vida.
+                    </p>
+                    <p style="color: var(--color-gray-dark);">
+                        MCU y nuestros especialistas están aquí para orientarte hacia opciones naturales que complementen el cuidado médico profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== DISCLAIMER SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CTA SECTION - EDITABLE SECTION START ==================== -->
+    <section class="cta" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-apple-green), var(--color-turquoise));">
+        <div class="container text-center">
+            <h2 style="color: var(--color-white); margin-bottom: var(--spacing-md);">¿Necesitas Orientación Personalizada?</h2>
+            <p style="color: var(--color-white); font-size: var(--font-size-large); margin-bottom: var(--spacing-lg); opacity: 0.9;">
+                Comparte tus resultados con MCU y recibe recomendaciones específicas para tu perfil de salud
+            </p>
+            <div>
+                <button class="btn btn-white btn-lg me-3" onclick="openChat('Hola MCU, acabo de completar algunos test de salud y me gustaría recibir recomendaciones personalizadas')" style="background-color: var(--color-white); color: var(--color-apple-green);">
+                    Consultar con MCU
+                </button>
+                <a href="/productos" class="btn btn-outline btn-lg" style="border-color: var(--color-white); color: var(--color-white);">
+                    Ver Productos Recomendados
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CTA SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== FOOTER - EDITABLE SECTION START ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MCU - Medicina Holística</h3>
+                    <p>Test de salud gratuitos y orientación especializada para tu bienestar integral.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <p><a href="/">Inicio</a></p>
+                    <p><a href="/quienes-somos">¿Quiénes Somos?</a></p>
+                    <p><a href="/productos">Productos</a></p>
+                    <p><a href="/estudios">Estudios</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Test Disponibles</h3>
+                    <p><a href="#testDigestivo">Salud Digestiva</a></p>
+                    <p><a href="#testEnergia">Energía y Vitalidad</a></p>
+                    <p><a href="#testEstres">Estrés y Bienestar Mental</a></p>
+                    <p><a href="#testInmune">Salud Inmunológica</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@mcu007.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-globe"></i> https://mcu007.netlify.app</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCU - Medicina Holística. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ==================== FOOTER - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION START ==================== -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle">💬</button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>MCU - Tu Asesor de Salud</h4>
+                <small>Especialista en Medicina Holística</small>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Escribe tu mensaje...">
+                <button class="chat-send" id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION START ==================== -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="authModalTitle">Iniciar Sesión</h3>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="loginUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="loginPassword" name="password" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="registerUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-input" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="registerPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-input" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION START ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Categorias.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script>
+        // Enhanced test calculation with specific recommendations for each test type
+        window.calculateTestResult = function(testId) {
+            const testForm = document.getElementById(testId);
+            if (!testForm) return;
+            
+            const formData = new FormData(testForm);
+            const answers = {};
+            
+            for (let [key, value] of formData.entries()) {
+                answers[key] = value;
+            }
+            
+            let score = 0;
+            let recommendations = '';
+            let chatMessage = '';
+            
+            // Calculate score based on risk factors
+            Object.values(answers).forEach(answer => {
+                if (answer === 'si' || answer === 'frecuente' || answer === 'alto' || answer === 'lenta' || answer === 'severas' || answer === 'exceso' || answer === 'sedentario') score += 3;
+                if (answer === 'aveces' || answer === 'medio' || answer === 'ocasional' || answer === 'normal' || answer === 'sobrepeso') score += 2;
+                if (answer === 'varias' || answer === 'mucho' || answer === 'baja' || answer === 'minima') score += 2;
+                if (answer === 'poco' || answer === 'leves' || answer === 'poca') score += 1;
+            });
+            
+            // Test-specific recommendations
+            if (testId === 'testDigestivo') {
+                chatMessage = `Completé el test de salud digestiva y obtuve un puntaje de ${score}. `;
+                if (score >= 10) {
+                    recommendations = `
+                        <h4>Nivel Alto: Tu sistema digestivo necesita atención</h4>
+                        <p><strong>Recomendaciones prioritarias:</strong></p>
+                        <ul>
+                            <li>Probióticos Multi-Cepa 50 Billones para restaurar flora intestinal</li>
+                            <li>Enzimas Digestivas Completas para mejorar digestión</li>
+                            <li>Fibra de Psyllium para regular tránsito intestinal</li>
+                            <li>Consulta con especialista en gastroenterología</li>
+                        </ul>
+                    `;
+                    chatMessage += "Tengo síntomas digestivos frecuentes. ¿Qué productos me recomiendas para mejorar mi salud digestiva?";
+                } else if (score >= 5) {
+                    recommendations = `
+                        <h4>Nivel Moderado: Mejoras necesarias en tu digestión</h4>
+                        <p><strong>Recomendaciones:</strong></p>
+                        <ul>
+                            <li>Probióticos preventivos para mantener flora saludable</li>
+                            <li>Enzimas digestivas ocasionales con comidas pesadas</li>
+                            <li>Aumentar fibra natural en la dieta</li>
+                            <li>Considera eliminar alimentos procesados</li>
+                        </ul>
+                    `;
+                    chatMessage += "Tengo algunos problemas digestivos ocasionales. ¿Qué puedo hacer para mejorar?";
+                } else {
+                    recommendations = `
+                        <h4>Nivel Bajo: Tu digestión está en buen estado</h4>
+                        <p><strong>Recomendaciones preventivas:</strong></p>
+                        <ul>
+                            <li>Mantén tu dieta equilibrada actual</li>
+                            <li>Considera probióticos preventivos ocasionales</li>
+                            <li>Continúa con hábitos alimentarios saludables</li>
+                            <li>Mantente hidratado adecuadamente</li>
+                        </ul>
+                    `;
+                    chatMessage += "Mi digestión está bien, pero me gustaría mantenerla saludable. ¿Qué productos preventivos recomiendas?";
+                }
+            } else if (testId === 'testEnergia') {
+                chatMessage = `Completé el test de energía y vitalidad y obtuve un puntaje de ${score}. `;
+                if (score >= 10) {
+                    recommendations = `
+                        <h4>Nivel Alto: Tu energía necesita apoyo urgente</h4>
+                        <p><strong>Recomendaciones prioritarias:</strong></p>
+                        <ul>
+                            <li>Complejo B Avanzado para metabolismo energético</li>
+                            <li>Ginseng Rojo Coreano Premium para vitalidad</li>
+                            <li>Coenzima Q10 para energía celular</li>
+                            <li>Evaluación médica para descartar deficiencias</li>
+                        </ul>
+                    `;
+                    chatMessage += "Me siento muy cansado y sin energía. ¿Qué suplementos naturales pueden ayudarme?";
+                } else if (score >= 5) {
+                    recommendations = `
+                        <h4>Nivel Moderado: Tu energía puede mejorar</h4>
+                        <p><strong>Recomendaciones:</strong></p>
+                        <ul>
+                            <li>Maca Peruana para energía natural sostenida</li>
+                            <li>Vitaminas del complejo B para metabolismo</li>
+                            <li>Mejora calidad del sueño y rutina de ejercicio</li>
+                            <li>Considera adaptar horarios de descanso</li>
+                        </ul>
+                    `;
+                    chatMessage += "A veces me falta energía durante el día. ¿Qué productos naturales me recomiendas?";
+                } else {
+                    recommendations = `
+                        <h4>Nivel Bajo: Tu nivel de energía es bueno</h4>
+                        <p><strong>Recomendaciones preventivas:</strong></p>
+                        <ul>
+                            <li>Mantén tu rutina de ejercicio actual</li>
+                            <li>Continúa con buenos hábitos de sueño</li>
+                            <li>Considera suplementos preventivos durante estrés</li>
+                            <li>Mantén hidratación y alimentación equilibrada</li>
+                        </ul>
+                    `;
+                    chatMessage += "Mi energía está bien, pero quiero mantenerla así. ¿Qué productos preventivos son útiles?";
+                }
+            } else if (testId === 'testEstres') {
+                chatMessage = `Completé el test de estrés y bienestar mental y obtuve un puntaje de ${score}. `;
+                if (score >= 10) {
+                    recommendations = `
+                        <h4>Nivel Alto: Tu estrés requiere atención inmediata</h4>
+                        <p><strong>Recomendaciones prioritarias:</strong></p>
+                        <ul>
+                            <li>Ashwagandha KSM-66 Premium para reducir cortisol</li>
+                            <li>Melatonina 3mg para mejorar calidad del sueño</li>
+                            <li>Aceites esenciales de lavanda para relajación</li>
+                            <li>Considera apoyo psicológico profesional</li>
+                        </ul>
+                    `;
+                    chatMessage += "Tengo mucho estrés y problemas de sueño. ¿Qué productos naturales me pueden ayudar a relajarme?";
+                } else if (score >= 5) {
+                    recommendations = `
+                        <h4>Nivel Moderado: Puedes mejorar tu manejo del estrés</h4>
+                        <p><strong>Recomendaciones:</strong></p>
+                        <ul>
+                            <li>Cápsulas de Valeriana y Pasiflora para relajación</li>
+                            <li>Omega-3 DHA para función cerebral</li>
+                            <li>Técnicas de meditación y respiración</li>
+                            <li>Establece rutinas de relajación</li>
+                        </ul>
+                    `;
+                    chatMessage += "A veces me siento estresado. ¿Qué productos naturales me ayudan a manejar mejor el estrés?";
+                } else {
+                    recommendations = `
+                        <h4>Nivel Bajo: Tu bienestar mental es bueno</h4>
+                        <p><strong>Recomendaciones preventivas:</strong></p>
+                        <ul>
+                            <li>Mantén tus estrategias actuales de manejo del estrés</li>
+                            <li>Considera suplementos preventivos en períodos estresantes</li>
+                            <li>Continúa con actividades que te relajan</li>
+                            <li>Mantén rutinas de ejercicio y descanso</li>
+                        </ul>
+                    `;
+                    chatMessage += "Mi bienestar mental está bien, pero quiero mantenerlo así. ¿Qué productos preventivos recomiendas?";
+                }
+            } else if (testId === 'testInmune') {
+                chatMessage = `Completé el test de salud inmunológica y obtuve un puntaje de ${score}. `;
+                if (score >= 10) {
+                    recommendations = `
+                        <h4>Nivel Alto: Tu sistema inmune necesita fortalecimiento</h4>
+                        <p><strong>Recomendaciones prioritarias:</strong></p>
+                        <ul>
+                            <li>Vitamina C Premium 1000mg para inmunidad</li>
+                            <li>Vitamina D3 5000 UI para función inmunológica</li>
+                            <li>Extracto de Echinacea Orgánica para defensas</li>
+                            <li>Evaluación médica para deficiencias nutricionales</li>
+                        </ul>
+                    `;
+                    chatMessage += "Me enfermo frecuentemente y me preocupa mi sistema inmune. ¿Qué productos me ayudan a fortalecerlo?";
+                } else if (score >= 5) {
+                    recommendations = `
+                        <h4>Nivel Moderado: Tu inmunidad puede fortalecerse</h4>
+                        <p><strong>Recomendaciones:</strong></p>
+                        <ul>
+                            <li>Vitamina C preventiva para mantener defensas</li>
+                            <li>Probióticos para fortalecer inmunidad intestinal</li>
+                            <li>Incrementa exposición solar segura</li>
+                            <li>Mantén dieta rica en antioxidantes</li>
+                        </ul>
+                    `;
+                    chatMessage += "A veces me enfermo y quiero fortalecer mis defensas. ¿Qué productos preventivos me recomiendas?";
+                } else {
+                    recommendations = `
+                        <h4>Nivel Bajo: Tu sistema inmune está fuerte</h4>
+                        <p><strong>Recomendaciones preventivas:</strong></p>
+                        <ul>
+                            <li>Mantén tus hábitos saludables actuales</li>
+                            <li>Continúa con ejercicio regular y buena alimentación</li>
+                            <li>Suplementos preventivos en épocas de mayor riesgo</li>
+                            <li>Mantén niveles adecuados de vitamina D</li>
+                        </ul>
+                    `;
+                    chatMessage += "Mi sistema inmune está bien, pero quiero mantenerlo fuerte. ¿Qué productos preventivos son útiles?";
+                }
+            } else if (testId === 'testPeso') {
+                chatMessage = `Completé el test de peso y metabolismo y obtuve un puntaje de ${score}. `;
+                if (score >= 10) {
+                    recommendations = `
+                        <h4>Nivel Alto: Tu metabolismo necesita apoyo integral</h4>
+                        <p><strong>Recomendaciones prioritarias:</strong></p>
+                        <ul>
+                            <li>Garcinia Cambogia 60% HCA para control de apetito</li>
+                            <li>Té Verde + L-Carnitina Termogénico para metabolismo</li>
+                            <li>Fibra de Konjac para control de porciones</li>
+                            <li>Plan nutricional personalizado con especialista</li>
+                        </ul>
+                    `;
+                    chatMessage += "Tengo problemas de peso y metabolismo lento. ¿Qué productos naturales me ayudan a acelerarlo?";
+                } else if (score >= 5) {
+                    recommendations = `
+                        <h4>Nivel Moderado: Puedes optimizar tu metabolismo</h4>
+                        <p><strong>Recomendaciones:</strong></p>
+                        <ul>
+                            <li>Té Verde para acelerar metabolismo naturalmente</li>
+                            <li>Fibra natural para mejorar saciedad</li>
+                            <li>Incrementa actividad física gradualmente</li>
+                            <li>Mejora hidratación y patrones alimentarios</li>
+                        </ul>
+                    `;
+                    chatMessage += "Quiero mejorar mi metabolismo y controlar mejor mi peso. ¿Qué productos naturales me recomiendas?";
+                } else {
+                    recommendations = `
+                        <h4>Nivel Bajo: Tu peso y metabolismo están bien</h4>
+                        <p><strong>Recomendaciones preventivas:</strong></p>
+                        <ul>
+                            <li>Mantén tu rutina actual de ejercicio y alimentación</li>
+                            <li>Continúa con hábitos saludables establecidos</li>
+                            <li>Suplementos preventivos para mantener metabolismo</li>
+                            <li>Monitorea cambios durante diferentes etapas de vida</li>
+                        </ul>
+                    `;
+                    chatMessage += "Mi peso está bien, pero quiero mantener un metabolismo saludable. ¿Qué productos preventivos son útiles?";
+                }
+            }
+            
+            const resultDiv = document.getElementById(testId + '_result');
+            if (resultDiv) {
+                resultDiv.innerHTML = `
+                    <div style="background: var(--color-light-turquoise); padding: var(--spacing-md); border-radius: var(--border-radius-lg); margin-top: var(--spacing-md);">
+                        ${recommendations}
+                        <div style="margin-top: var(--spacing-md); text-align: center;">
+                            <button class="btn btn-primary me-2" onclick="openChat('${chatMessage}')">
+                                <i class="fas fa-comments"></i> Consultar con MCU
+                            </button>
+                            <a href="/productos" class="btn btn-secondary">
+                                <i class="fas fa-shopping-cart"></i> Ver Productos
+                            </a>
+                        </div>
+                    </div>
+                `;
+                resultDiv.classList.add('show');
+                
+                // Scroll to results
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+    </script>
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION END ==================== -->
+</body>
+</html>

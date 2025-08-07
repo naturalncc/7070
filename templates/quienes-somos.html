@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ==================== META TAGS - EDITABLE SECTION START ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce la historia de MCU, nuestro equipo de especialistas en medicina holística y nuestro compromiso con tu bienestar integral.">
+    <meta name="keywords" content="MCU historia, medicina holística, equipo médico, especialistas naturales, bienestar integral">
+    <title>¿Quiénes Somos? - MCU Medicina Holística</title>
+    <!-- ==================== META TAGS - EDITABLE SECTION END ==================== -->
+    
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION START ==================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION END ==================== -->
+</head>
+<body>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION START ==================== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar">
+                    <a href="/" class="logo">
+                        <i class="fas fa-leaf"></i> MCU
+                    </a>
+                    
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Inicio</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/quienes-somos" class="nav-link active">¿Quiénes Somos?</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/productos" class="nav-link">Productos</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/estudios" class="nav-link">Estudios y Vivencias</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/test-rapidos" class="nav-link">Test Rápidos</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <button class="btn btn-outline login-btn">Iniciar Sesión</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary register-btn">Registrarse</button>
+                        </li>
+                        <li class="nav-item">
+                            <span class="user-info" style="display: none;"></span>
+                            <button class="btn btn-secondary logout-btn" style="display: none;">Cerrar Sesión</button>
+                        </li>
+                    </ul>
+                    
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== PAGE HERO - EDITABLE SECTION START ==================== -->
+    <section class="page-hero" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-light-turquoise), var(--color-light-green));">
+        <div class="container">
+            <div class="text-center">
+                <h1 style="color: var(--color-white); font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">¿Quiénes Somos?</h1>
+                <p style="color: var(--color-white); font-size: var(--font-size-large); opacity: 0.9;">Conoce la historia y el equipo detrás de MCU</p>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PAGE HERO - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== OUR STORY - EDITABLE SECTION START ==================== -->
+    <section class="our-story" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <div class="row align-items-center mb-xl">
+                <div class="col-lg-6">
+                    <h2 class="section-title text-left">Nuestra Historia</h2>
+                    <p class="mb-md">
+                        MCU nació en 2009 con una visión clara: democratizar el acceso a la medicina holística y productos naturales de la más alta calidad. Fundada por un equipo de profesionales apasionados por el bienestar integral, nuestra empresa ha crecido hasta convertirse en una referencia en el campo de la salud natural.
+                    </p>
+                    <p class="mb-md">
+                        Durante más de 15 años, hemos ayudado a miles de personas a mejorar su calidad de vida a través de soluciones naturales respaldadas por la ciencia y la tradición milenaria. Nuestro compromiso es brindar productos auténticos, asesoramiento experto y un servicio personalizado que supere las expectativas de nuestros clientes.
+                    </p>
+                    <p>
+                        En MCU, creemos que cada persona es única y merece un enfoque personalizado para su bienestar. Por eso, nuestro equipo de especialistas está siempre disponible para brindar orientación y recomendaciones adaptadas a las necesidades individuales de cada cliente.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://pixabay.com/get/g07946325efb3baf22c3954b9568acd344ccd653442bef913b27e5b4edc2e63913ed94610584233d38688aed6f1f760d00a66470cb58ac15b5f9dc5dd2dd1899d_1280.jpg" 
+                         alt="Historia de MCU" 
+                         class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== OUR STORY - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== OUR MISSION - EDITABLE SECTION START ==================== -->
+    <section class="mission-vision" style="padding: var(--spacing-xl) 0; background-color: var(--color-gray-light);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-lg">
+                    <div class="mission-card" style="background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); height: 100%;">
+                        <div class="text-center mb-md">
+                            <i class="fas fa-bullseye" style="font-size: 3rem; color: var(--color-apple-green);"></i>
+                        </div>
+                        <h3 style="color: var(--color-olive); text-align: center; margin-bottom: var(--spacing-md);">Nuestra Misión</h3>
+                        <p style="text-align: center;">
+                            Proporcionar productos naturales de la más alta calidad y asesoramiento experto para ayudar a las personas a alcanzar su máximo potencial de bienestar y salud integral.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-lg">
+                    <div class="vision-card" style="background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); height: 100%;">
+                        <div class="text-center mb-md">
+                            <i class="fas fa-eye" style="font-size: 3rem; color: var(--color-turquoise);"></i>
+                        </div>
+                        <h3 style="color: var(--color-olive); text-align: center; margin-bottom: var(--spacing-md);">Nuestra Visión</h3>
+                        <p style="text-align: center;">
+                            Ser la plataforma líder en medicina holística, reconocida por la excelencia de nuestros productos, la innovación en nuestros servicios y el impacto positivo en la vida de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-lg">
+                    <div class="values-card" style="background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); height: 100%;">
+                        <div class="text-center mb-md">
+                            <i class="fas fa-heart" style="font-size: 3rem; color: var(--color-olive);"></i>
+                        </div>
+                        <h3 style="color: var(--color-olive); text-align: center; margin-bottom: var(--spacing-md);">Nuestros Valores</h3>
+                        <ul style="list-style: none; padding: 0; text-align: center;">
+                            <li style="margin-bottom: var(--spacing-xs);">✓ Calidad Premium</li>
+                            <li style="margin-bottom: var(--spacing-xs);">✓ Transparencia Total</li>
+                            <li style="margin-bottom: var(--spacing-xs);">✓ Servicio Personalizado</li>
+                            <li style="margin-bottom: var(--spacing-xs);">✓ Innovación Continua</li>
+                            <li>✓ Compromiso Social</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== OUR MISSION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== OUR TEAM - EDITABLE SECTION START ==================== -->
+    <section class="our-team" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo de Especialistas</h2>
+            <p class="text-center mb-xl">Profesionales dedicados a tu bienestar con años de experiencia en medicina holística</p>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="team-member" style="text-align: center; background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <img src="https://pixabay.com/get/g16d9db295b51e6fee24489b78a3187630e47ba16d3ddc0d89c70c94ef19f51c84670f869b4bfa60ee22113d48e13a5c2562c893592fadc63b36ec2f9d1dbce70_1280.jpg" 
+                             alt="Dra. Ana Martínez" 
+                             style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-xs);">Dra. Ana Martínez</h4>
+                        <p style="color: var(--color-turquoise); font-weight: 500; margin-bottom: var(--spacing-sm);">Directora Médica</p>
+                        <p style="color: var(--color-gray-dark); font-size: var(--font-size-small);">
+                            Especialista en medicina integrativa con 20 años de experiencia. Experta en fitoterapia y suplementación natural.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="team-member" style="text-align: center; background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <img src="https://pixabay.com/get/ge09233f2673a44d4b568fb7dbe3dc99f4317d7e8684fb9613686188f6eb41bdf4f05a4a321bc8994dc4f8284f8549fe8fd829d896b9a9ffbcb12351f37876b0b_1280.jpg" 
+                             alt="Dr. Carlos González" 
+                             style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-xs);">Dr. Carlos González</h4>
+                        <p style="color: var(--color-turquoise); font-weight: 500; margin-bottom: var(--spacing-sm);">Especialista en Nutrición</p>
+                        <p style="color: var(--color-gray-dark); font-size: var(--font-size-small);">
+                            Nutriólogo holístico especializado en suplementación deportiva y bienestar digestivo. 15 años de experiencia clínica.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="team-member" style="text-align: center; background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <img src="https://pixabay.com/get/g84d2f41b10ed36ca54e310110da64d9e3ce0baad2e70ba26704522c962b55befaa2d89f9e9173d45bd5bfe0faeb5ed76fc3a0b0296f8d3124deb70142b141547_1280.jpg" 
+                             alt="Lic. María Rodríguez" 
+                             style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-xs);">Lic. María Rodríguez</h4>
+                        <p style="color: var(--color-turquoise); font-weight: 500; margin-bottom: var(--spacing-sm);">Aromaterapista Certificada</p>
+                        <p style="color: var(--color-gray-dark); font-size: var(--font-size-small);">
+                            Especialista en aceites esenciales y aromaterapia terapéutica. Certificada por asociaciones internacionales de aromaterapia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== OUR TEAM - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CERTIFICATIONS - EDITABLE SECTION START ==================== -->
+    <section class="certifications" style="padding: var(--spacing-xl) 0; background-color: var(--color-gray-light);">
+        <div class="container">
+            <h2 class="section-title">Certificaciones y Referencias</h2>
+            <p class="text-center mb-xl">Avalados por las principales organizaciones de medicina natural y salud holística</p>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="certification-card" style="text-align: center; background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--color-apple-green); margin-bottom: var(--spacing-sm);"></i>
+                        <h4 style="color: var(--color-olive);">ISO 9001:2015</h4>
+                        <p style="font-size: var(--font-size-small);">Sistema de Gestión de Calidad certificado</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="certification-card" style="text-align: center; background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--color-apple-green); margin-bottom: var(--spacing-sm);"></i>
+                        <h4 style="color: var(--color-olive);">Orgánico Certificado</h4>
+                        <p style="font-size: var(--font-size-small);">Productos orgánicos certificados por entidades reguladoras</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="certification-card" style="text-align: center; background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--color-apple-green); margin-bottom: var(--spacing-sm);"></i>
+                        <h4 style="color: var(--color-olive);">GMP Certified</h4>
+                        <p style="font-size: var(--font-size-small);">Buenas Prácticas de Manufactura garantizadas</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="certification-card" style="text-align: center; background: var(--color-white); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light);">
+                        <i class="fas fa-award" style="font-size: 2.5rem; color: var(--color-apple-green); margin-bottom: var(--spacing-sm);"></i>
+                        <h4 style="color: var(--color-olive);">Premio Excelencia</h4>
+                        <p style="font-size: var(--font-size-small);">Reconocimiento a la excelencia en productos naturales 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CERTIFICATIONS - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== COMMITMENT - EDITABLE SECTION START ==================== -->
+    <section class="commitment" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://pixabay.com/get/g07946325efb3baf22c3954b9568acd344ccd653442bef913b27e5b4edc2e63913ed94610584233d38688aed6f1f760d00a66470cb58ac15b5f9dc5dd2dd1899d_1280.jpg" 
+                         alt="Nuestro Compromiso" 
+                         class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title text-left">Nuestro Compromiso Contigo</h2>
+                    <div class="commitment-item" style="margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-apple-green); margin-bottom: var(--spacing-xs);">
+                            <i class="fas fa-check-circle"></i> Calidad Garantizada
+                        </h4>
+                        <p>Todos nuestros productos pasan por rigurosos controles de calidad y están respaldados por certificaciones internacionales.</p>
+                    </div>
+                    
+                    <div class="commitment-item" style="margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-apple-green); margin-bottom: var(--spacing-xs);">
+                            <i class="fas fa-user-md"></i> Asesoramiento Experto
+                        </h4>
+                        <p>Nuestro equipo de profesionales está siempre disponible para brindarte orientación personalizada y resolver tus dudas.</p>
+                    </div>
+                    
+                    <div class="commitment-item" style="margin-bottom: var(--spacing-md);">
+                        <h4 style="color: var(--color-apple-green); margin-bottom: var(--spacing-xs);">
+                            <i class="fas fa-shipping-fast"></i> Envío Seguro y Rápido
+                        </h4>
+                        <p>Garantizamos la integridad de tus productos con empaques especializados y tiempos de entrega optimizados.</p>
+                    </div>
+                    
+                    <div class="commitment-item">
+                        <h4 style="color: var(--color-apple-green); margin-bottom: var(--spacing-xs);">
+                            <i class="fas fa-handshake"></i> Satisfacción 100%
+                        </h4>
+                        <p>Tu satisfacción es nuestra prioridad. Ofrecemos garantía de devolución y soporte continuo post-venta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== COMMITMENT - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CTA SECTION - EDITABLE SECTION START ==================== -->
+    <section class="cta" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-olive), var(--color-turquoise));">
+        <div class="container text-center">
+            <h2 style="color: var(--color-white); margin-bottom: var(--spacing-md);">¿Listo para Comenzar tu Viaje hacia el Bienestar?</h2>
+            <p style="color: var(--color-white); font-size: var(--font-size-large); margin-bottom: var(--spacing-lg); opacity: 0.9;">
+                Únete a miles de personas que ya han transformado su vida con nuestros productos y asesoramiento especializado
+            </p>
+            <div>
+                <a href="/productos" class="btn btn-white btn-lg me-3" style="background-color: var(--color-white); color: var(--color-olive);">Ver Productos</a>
+                <button class="btn btn-outline btn-lg" onclick="openChat('Hola, me gustaría conocer más sobre MCU y cómo pueden ayudarme con mi bienestar')" style="border-color: var(--color-white); color: var(--color-white);">Hablar con MCU</button>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CTA SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== FOOTER - EDITABLE SECTION START ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MCU - Medicina Holística</h3>
+                    <p>Especialistas en medicina natural y productos holísticos para tu bienestar integral.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="/">Inicio</a></p>
+                    <p><a href="/quienes-somos">¿Quiénes Somos?</a></p>
+                    <p><a href="/productos">Productos</a></p>
+                    <p><a href="/estudios">Estudios y Vivencias</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <p><a href="/productos#vitaminas">Suplementos</a></p>
+                    <p><a href="/productos#hierbas">Hierbas</a></p>
+                    <p><a href="/productos#aceites">Aceites</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@mcu007.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-globe"></i> https://mcu007.netlify.app</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCU - Medicina Holística. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ==================== FOOTER - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION START ==================== -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle">💬</button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>MCU - Tu Asesor de Salud</h4>
+                <small>Especialista en Medicina Holística</small>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Escribe tu mensaje...">
+                <button class="chat-send" id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION START ==================== -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="authModalTitle">Iniciar Sesión</h3>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="loginUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="loginPassword" name="password" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="registerUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-input" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="registerPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-input" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION START ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Categorias.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION END ==================== -->
+</body>
+</html>

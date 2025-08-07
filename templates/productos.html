@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ==================== META TAGS - EDITABLE SECTION START ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de productos naturales MCU. Suplementos vitamínicos, hierbas medicinales, aceites esenciales y más para tu salud holística.">
+    <meta name="keywords" content="productos naturales, suplementos MCU, hierbas medicinales, aceites esenciales, vitaminas, probióticos, medicina holística">
+    <title>Productos Naturales - MCU Medicina Holística</title>
+    <!-- ==================== META TAGS - EDITABLE SECTION END ==================== -->
+    
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION START ==================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION END ==================== -->
+</head>
+<body>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION START ==================== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar">
+                    <a href="/" class="logo">
+                        <i class="fas fa-leaf"></i> MCU
+                    </a>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/quienes-somos" class="nav-link">¿Quiénes Somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/productos" class="nav-link active">Productos</a>
+                            <!-- Mega Menu for Products -->
+                            <div class="mega-menu">
+                                <div class="mega-menu-section">
+                                    <h4 class="mega-menu-title">Categorías Populares</h4>
+                                    <a href="#vitaminas" class="mega-menu-link">Suplementos Vitamínicos</a>
+                                    <a href="#hierbas" class="mega-menu-link">Hierbas Medicinales</a>
+                                    <a href="#aceites" class="mega-menu-link">Aceites Esenciales</a>
+                                    <a href="#digestivos" class="mega-menu-link">Salud Digestiva</a>
+                                </div>
+                                <div class="mega-menu-section">
+                                    <h4 class="mega-menu-title">Salud Específica</h4>
+                                    <a href="#relajacion" class="mega-menu-link">Relajación y Sueño</a>
+                                    <a href="#articular" class="mega-menu-link">Salud Articular</a>
+                                    <a href="#mental" class="mega-menu-link">Salud Mental</a>
+                                    <a href="#femenina" class="mega-menu-link">Salud Femenina</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/estudios" class="nav-link">Estudios y Vivencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/test-rapidos" class="nav-link">Test Rápidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline login-btn">Iniciar Sesión</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary register-btn">Registrarse</button>
+                        </li>
+                        <li class="nav-item">
+                            <span class="user-info" style="display: none;"></span>
+                            <button class="btn btn-secondary logout-btn" style="display: none;">Cerrar Sesión</button>
+                        </li>
+                    </ul>
+                    
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==================== HEADER AND NAVIGATION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== PAGE HERO - EDITABLE SECTION START ==================== -->
+    <section class="page-hero" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-olive), var(--color-turquoise));">
+        <div class="container">
+            <div class="text-center">
+                <h1 style="color: var(--color-white); font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">Nuestros Productos Naturales</h1>
+                <p style="color: var(--color-white); font-size: var(--font-size-large); opacity: 0.9;">Descubre nuestra amplia gama de productos de medicina holística de la más alta calidad</p>
+                <div style="margin-top: var(--spacing-lg);">
+                    <div style="background: rgba(255,255,255,0.1); padding: var(--spacing-md); border-radius: var(--border-radius-lg); display: inline-block;">
+                        <p style="color: var(--color-white); margin: 0; font-size: var(--font-size-medium);">
+                            <i class="fas fa-award"></i> Más de 45 productos certificados | <i class="fas fa-shipping-fast"></i> Envío gratuito | <i class="fas fa-certificate"></i> Calidad garantizada
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PAGE HERO - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== SEARCH AND FILTER SECTION - EDITABLE SECTION START ==================== -->
+    <section class="search-section" style="padding: var(--spacing-lg) 0; background-color: var(--color-white); box-shadow: var(--shadow-light);">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar productos por nombre, beneficios, categoría...">
+                <select id="filterSelect" class="filter-select">
+                    <option value="all">Buscar en todo</option>
+                    <option value="name">Solo en nombres</option>
+                    <option value="benefits">Solo en beneficios</option>
+                    <option value="description">Solo en descripción</option>
+                    <option value="category">Solo en categoría</option>
+                </select>
+                <button class="btn btn-primary" onclick="app.performSearch()">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+            
+            <!-- Quick Category Filters -->
+            <div class="category-filters" style="margin-top: var(--spacing-md); text-align: center;">
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('all')">
+                    <i class="fas fa-th-large"></i> Todos
+                </button>
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('Suplementos Vitamínicos')">
+                    <i class="fas fa-pills"></i> Vitaminas
+                </button>
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('Hierbas Medicinales')">
+                    <i class="fas fa-seedling"></i> Hierbas
+                </button>
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('Aceites Esenciales')">
+                    <i class="fas fa-tint"></i> Aceites
+                </button>
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('Salud Digestiva')">
+                    <i class="fas fa-heart"></i> Digestivos
+                </button>
+                <button class="btn btn-outline btn-sm me-2 mb-2" onclick="filterByCategory('Relajación y Sueño')">
+                    <i class="fas fa-moon"></i> Relajación
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== SEARCH AND FILTER SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== PRODUCTS DISPLAY SECTION - EDITABLE SECTION START ==================== -->
+    <section class="products">
+        <div class="container">
+            <!-- Products Header -->
+            <div class="products-header">
+                <h2 class="section-title">Catálogo de Productos</h2>
+                <div class="products-counter">
+                    <span id="productsCount">Cargando productos...</span>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div class="products-grid" id="productsContainer">
+                <!-- Products will be loaded dynamically by JavaScript -->
+                <div class="text-center p-lg">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Cargando productos...</span>
+                    </div>
+                    <p class="mt-md">Cargando nuestro catálogo de productos naturales...</p>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-xl" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-outline btn-lg" id="loadMoreBtn">
+                    <i class="fas fa-plus-circle"></i> Cargar Más Productos
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PRODUCTS DISPLAY SECTION - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CATEGORIES SHOWCASE - EDITABLE SECTION START ==================== -->
+    <section class="categories-showcase" style="padding: var(--spacing-xl) 0; background-color: var(--color-gray-light);">
+        <div class="container">
+            <h2 class="section-title">Explora Nuestras Categorías</h2>
+            <p class="text-center mb-xl">Cada categoría está cuidadosamente curada por nuestros especialistas en medicina holística</p>
+            
+            <div class="row">
+                <!-- Category 1 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-apple-green); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Suplementos Vitamínicos</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Vitaminas esenciales, minerales y complejos nutricionales para fortalecer tu sistema inmunológico y mejorar tu energía diaria.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Suplementos Vitamínicos')">Ver Productos</button>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-turquoise); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Hierbas Medicinales</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Remedios naturales a base de plantas medicinales tradicionales, cuidadosamente seleccionadas por su pureza y efectividad terapéutica.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Hierbas Medicinales')">Ver Productos</button>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-olive); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Aceites Esenciales</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Aceites puros y naturales para aromaterapia, relajación y cuidado personal, extraídos por métodos tradicionales de destilación.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Aceites Esenciales')">Ver Productos</button>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-apple-green); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Salud Digestiva</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Probióticos, enzimas digestivas y productos naturales para mantener un sistema digestivo saludable y equilibrado.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Salud Digestiva')">Ver Productos</button>
+                    </div>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-turquoise); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Relajación y Sueño</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Productos naturales para promover la relajación, reducir el estrés y mejorar la calidad de tu descanso nocturno.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Relajación y Sueño')">Ver Productos</button>
+                    </div>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="col-lg-4 col-md-6 mb-lg">
+                    <div class="category-showcase-card" style="background: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); padding: var(--spacing-lg); text-align: center; height: 100%;">
+                        <div style="font-size: 3rem; color: var(--color-olive); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive); margin-bottom: var(--spacing-sm);">Salud Femenina</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Productos especializados para el bienestar integral de la mujer en todas las etapas de la vida, desde la adolescencia hasta la menopausia.</p>
+                        <button class="btn btn-outline" onclick="filterByCategory('Salud Femenina')">Ver Productos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CATEGORIES SHOWCASE - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== FEATURED BENEFITS - EDITABLE SECTION START ==================== -->
+    <section class="featured-benefits" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegir MCU?</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="benefit-item text-center">
+                        <div style="font-size: 3rem; color: var(--color-apple-green); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive);">Calidad Certificada</h4>
+                        <p>Todos nuestros productos cumplen con los más altos estándares de calidad internacional.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="benefit-item text-center">
+                        <div style="font-size: 3rem; color: var(--color-turquoise); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive);">100% Natural</h4>
+                        <p>Ingredientes puros sin aditivos artificiales, conservantes ni químicos dañinos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="benefit-item text-center">
+                        <div style="font-size: 3rem; color: var(--color-apple-green); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive);">Asesoramiento Experto</h4>
+                        <p>Nuestro equipo de especialistas está disponible para orientarte en tu elección.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-lg">
+                    <div class="benefit-item text-center">
+                        <div style="font-size: 3rem; color: var(--color-turquoise); margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4 style="color: var(--color-olive);">Envío Rápido</h4>
+                        <p>Entrega segura y rápida con empaque especializado para preservar la calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== FEATURED BENEFITS - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CONSULTATION CTA - EDITABLE SECTION START ==================== -->
+    <section class="consultation-cta" style="padding: var(--spacing-xl) 0; background: linear-gradient(135deg, var(--color-apple-green), var(--color-turquoise));">
+        <div class="container text-center">
+            <h2 style="color: var(--color-white); margin-bottom: var(--spacing-md);">¿No Encuentras lo que Buscas?</h2>
+            <p style="color: var(--color-white); font-size: var(--font-size-large); margin-bottom: var(--spacing-lg); opacity: 0.9;">
+                Nuestro asistente virtual MCU puede ayudarte a encontrar el producto perfecto para tus necesidades específicas
+            </p>
+            <div>
+                <button class="btn btn-white btn-lg me-3" onclick="openChat('Hola MCU, estoy buscando productos específicos para mis necesidades de salud. ¿Puedes ayudarme a encontrar lo que necesito?')" style="background-color: var(--color-white); color: var(--color-apple-green);">
+                    <i class="fas fa-comments"></i> Consultar con MCU
+                </button>
+                <a href="/test-rapidos" class="btn btn-outline btn-lg" style="border-color: var(--color-white); color: var(--color-white);">
+                    <i class="fas fa-clipboard-check"></i> Hacer Test de Salud
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CONSULTATION CTA - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== FOOTER - EDITABLE SECTION START ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MCU - Medicina Holística</h3>
+                    <p>Tu tienda especializada en productos naturales de la más alta calidad para el bienestar integral.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categorías Principales</h3>
+                    <p><a href="#vitaminas">Suplementos Vitamínicos</a></p>
+                    <p><a href="#hierbas">Hierbas Medicinales</a></p>
+                    <p><a href="#aceites">Aceites Esenciales</a></p>
+                    <p><a href="#digestivos">Salud Digestiva</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Salud Especializada</h3>
+                    <p><a href="#relajacion">Relajación y Sueño</a></p>
+                    <p><a href="#articular">Salud Articular</a></p>
+                    <p><a href="#mental">Salud Mental</a></p>
+                    <p><a href="#femenina">Salud Femenina</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servicio al Cliente</h3>
+                    <p><i class="fas fa-envelope"></i> info@mcu007.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM</p>
+                    <p><i class="fas fa-globe"></i> https://mcu007.netlify.app</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCU - Medicina Holística. Todos los derechos reservados. | Productos de calidad certificada</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ==================== FOOTER - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION START ==================== -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle">💬</button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>MCU - Tu Asesor de Salud</h4>
+                <small>Especialista en Medicina Holística</small>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Pregúntame sobre productos...">
+                <button class="chat-send" id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== CHAT WIDGET - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION START ==================== -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="authModalTitle">Iniciar Sesión</h3>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="loginUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="loginPassword" name="password" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="registerUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-input" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="registerPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-input" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ==================== AUTH MODAL - EDITABLE SECTION END ==================== -->
+
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION START ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Categorias.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script>
+        // Enhanced product filtering functionality
+        function filterByCategory(categoryName) {
+            const searchInput = document.getElementById('searchInput');
+            const filterSelect = document.getElementById('filterSelect');
+            
+            if (categoryName === 'all') {
+                searchInput.value = '';
+                filterSelect.value = 'all';
+            } else {
+                searchInput.value = categoryName;
+                filterSelect.value = 'category';
+            }
+            
+            if (window.app) {
+                window.app.performSearch();
+            }
+            
+            // Scroll to products section
+            document.getElementById('productsContainer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+        
+        // Update products count display
+        function updateProductsCount(count, total) {
+            const counter = document.getElementById('productsCount');
+            if (counter) {
+                counter.textContent = `Mostrando ${count} de ${total} productos`;
+            }
+        }
+        
+        // Auto-update products count when app loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for app to initialize and load products
+            setTimeout(() => {
+                if (window.app && window.app.products) {
+                    updateProductsCount(window.app.filteredProducts.length, window.app.products.length);
+                }
+                
+                // Update count when search is performed
+                const originalPerformSearch = window.app.performSearch;
+                window.app.performSearch = function() {
+                    originalPerformSearch.call(this);
+                    updateProductsCount(this.filteredProducts.length, this.products.length);
+                };
+            }, 1000);
+        });
+    </script>
+    <!-- ==================== JAVASCRIPT - EDITABLE SECTION END ==================== -->
+</body>
+</html>
