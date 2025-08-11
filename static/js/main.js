@@ -1,4 +1,9 @@
 // ==================== MAIN APPLICATION CONTROLLER - EDITABLE SECTION START ====================
+ // === SUPABASE CONFIG ===
+const supabaseUrl = 'https://xqdrghfepohivjpyhnlh.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxZHJnaGZlcG9oaXZqcHlobmxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NzAwODIsImV4cCI6MjA3MDE0NjA4Mn0.azzMA3b-KRiIEGQ-OqxrYkmHzdLSHg6uRrgFmaTUS0o';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
 class HolisticApp {
     constructor() {
         this.currentUser = null;
@@ -68,10 +73,7 @@ class HolisticApp {
     }
     
     // ==================== USER AUTHENTICATION - EDITABLE SECTION START ====================
- // === SUPABASE CONFIG ===
-const supabaseUrl = 'https://xqdrghfepohivjpyhnlh.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxZHJnaGZlcG9oaXZqcHlobmxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NzAwODIsImV4cCI6MjA3MDE0NjA4Mn0.azzMA3b-KRiIEGQ-OqxrYkmHzdLSHg6uRrgFmaTUS0o';
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
 
 // === APP LOGIC ===
 
