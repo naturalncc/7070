@@ -102,7 +102,7 @@ class HolisticApp {
         const password = form.querySelector('[name="password"]').value;
 
         try {
-            const { data, error } = await supabase.auth.signInWithPassword({ email: username, password });
+            const { data, error } = await supabase.auth.signInWithPassword({ email: username, username, password });
             if (error) {
                 this.showMessage('Error al iniciar sesión: ' + error.message, 'error');
                 return;
@@ -121,6 +121,7 @@ class HolisticApp {
         const form = e.target;
         const username = form.querySelector('[name="username"]').value.trim();
         const email = form.querySelector('[name="email"]').value.trim();
+        const phone = form.querySelector('[name="phone"]').value.trim();
         const password = form.querySelector('[name="password"]').value;
         const confirmPassword = form.querySelector('[name="confirmPassword"]').value;
 
