@@ -102,7 +102,7 @@ class HolisticApp {
         const password = form.querySelector('[name="password"]').value;
 
         try {
-            const { data, error } = await supabase.auth.signInWithPassword({ email: username, username, password });
+            const { data, error } = await supabase.auth.signInWithPassword({ email: username, phone, password });
             if (error) {
                 this.showMessage('Error al iniciar sesión: ' + error.message, 'error');
                 return;
