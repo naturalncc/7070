@@ -68,27 +68,145 @@ class HolisticApp {
     }
     
     // ==================== USER AUTHENTICATION - EDITABLE SECTION START ====================
+ // === SUPABASE CONFIG ===
+const supabaseUrl = 'https://xqdrghfepohivjpyhnlh.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhxZHJnaGZlcG9oaXZqcHlobmxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NzAwODIsImV4cCI6MjA3MDE0NjA4Mn0.azzMA3b-KRiIEGQ-OqxrYkmHzdLSHg6uRrgFmaTUS0o';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+// === APP LOGIC ===
+
+const App = {
+    currentUser: null,
+
+    async init() {
+        // Cargar sesión de usuario con Supabase
+        await this.loadUserSession();
+
+        // Otros inits de UI si tienes...
+        this.initUIEvents();
+        this.updateUI();
+        this.setupChat();
+        console.log('MCU Holistic App initialized successfully');
+    },
+
     async loadUserSession() {
         try {
-            const response = await fetch('/api/user-session');
-            const data = await response.json();
-            
-            if (data.logged_in) {
-                this.currentUser = data.user;
-            }
+            const { data: { user } } = await supabase.auth.getUser();
+            this.currentUser = user || null;
         } catch (error) {
-            console.error('Error loading user session:', error);
+            console.error('Error cargando sesión de usuario (Supabase):', error);
+            this.currentUser = null;
         }
-    }
-    
+    },
+
+    async handleLogin(e) {
+        e.preventDefault();
+        const form = e.target;
+        const username = form.querySelector('[name="username"]').value.trim();
+        const password = form.querySelector('[name="password"]').value;
+
+        try {
+            // Supabase solo permite login con email por defecto, pero puedes usar "email" o "username" con lógica adicional.
+            // Aquí suponemos que username es igual a email registrado
+            // Si quieres login solo con "Usuario" (no email), necesitas una función edge o lógica extra en Supabase.
+            // Alternativa: Pide a los usuarios que su "Usuario" sea su correo electrónico.
+            const { data, error } = await supabase.auth.signInWithPassword({ email: username, password });
+            if (error) {
+                this.showMessage('Error al iniciar sesión: ' + error.message, 'error');
+                return;
+            }
+            this.currentUser = data.user;
+            this.closeAuthModal();
+            await this.updateUI();
+            this.showMessage('Sesión iniciada exitosamente', 'success');
+        } catch (error) {
+            this.showMessage('Error al iniciar sesión: ' + error.message, 'error');
+        }
+    },
+
+    async handleRegister(e) {
+        e.preventDefault();
+        const form = e.target;
+        const username = form.querySelector('[name="username"]').value.trim();
+        const email = form.querySelector('[name="email"]').value.trim();
+        const password = form.querySelector('[name="password"]').value;
+        const confirmPassword = form.querySelector('[name="confirmPassword"]').value;
+
+        if (password !== confirmPassword) {
+            this.showMessage('Las contraseñas no coinciden', 'error');
+            return;
+        }
+
+        try {
+            // Supabase requiere email para el registro, pero guardaremos el "Usuario" en un campo adicional si quieres
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+                options: {
+                    data: { username }
+                }
+            });
+            if (error) {
+                this.showMessage('Error al registrarse: ' + error.message, 'error');
+                return;
+            }
+            this.currentUser = data.user;
+            this.closeAuthModal();
+            await this.updateUI();
+            this.showMessage('Registro exitoso. Revisa tu correo para confirmar tu cuenta.', 'success');
+        } catch (error) {
+            this.showMessage('Error al registrarse: ' + error.message, 'error');
+        }
+    },
+
+    async handleLogout() {
+        try {
+            await supabase.auth.signOut();
+            this.currentUser = null;
+            await this.updateUI();
+            this.showMessage('Sesión cerrada', 'success');
+        } catch (error) {
+            this.showMessage('Error al cerrar sesión: ' + error.message, 'error');
+        }
+    },
+
+    // === GUARDAR CONTACTOS EN SUPABASE ===
+    async guardarContactoSupabase(nombre, email, mensaje) {
+        const { data, error } = await supabase
+            .from('contactos')
+            .insert([{ nombre: nombre, email: email, mensaje: mensaje }]);
+        if (error) throw error;
+        return data;
+    },
+
+    // === UI Helpers ===
+
+    showMessage(message, type = 'info') {
+        // Asume que tienes algún div para mensajes, puedes adaptar esto
+        alert(message);
+    },
+
+    updateUI() {
+        // Actualiza tu UI según si hay usuario logueado o no
+        // Ejemplo:
+        if (this.currentUser) {
+            document.body.classList.add('logged-in');
+            document.body.classList.remove('logged-out');
+        } else {
+            document.body.classList.remove('logged-in');
+            document.body.classList.add('logged-out');
+        }
+    },
+
+    // === MODALS ===
+
     showAuthModal(type) {
         const modal = document.getElementById('authModal');
         const loginForm = document.getElementById('loginForm');
         const registerForm = document.getElementById('registerForm');
         const modalTitle = document.getElementById('authModalTitle');
-        
         if (!modal || !loginForm || !registerForm || !modalTitle) return;
-        
+
         if (type === 'login') {
             modalTitle.textContent = 'Iniciar Sesión';
             loginForm.style.display = 'block';
@@ -98,100 +216,51 @@ class HolisticApp {
             loginForm.style.display = 'none';
             registerForm.style.display = 'block';
         }
-        
         modal.classList.add('show');
-    }
-    
+    },
+
     closeAuthModal() {
         const modal = document.getElementById('authModal');
         if (modal) {
             modal.classList.remove('show');
         }
-    }
-    
-    async handleLogin(e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        
-        try {
-            const response = await fetch('/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    username: formData.get('username'),
-                    password: formData.get('password')
-                })
-            });
-            
-            const data = await response.json();
-            
-            if (data.success) {
-                this.currentUser = data.user;
-                this.closeAuthModal();
-                this.updateUI();
-                this.showMessage('Sesión iniciada exitosamente', 'success');
-            } else {
-                this.showMessage(data.message, 'error');
+    },
+
+    // === EVENTOS UI ===
+
+    initUIEvents() {
+        // Toggle menú móvil
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
+
+        // Botones de auth
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.login-btn')) this.showAuthModal('login');
+            if (e.target.matches('.register-btn')) this.showAuthModal('register');
+            if (e.target.matches('.logout-btn')) this.handleLogout();
+        });
+
+        // Formularios
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const contactForm = document.getElementById('contactForm');
+        if (loginForm) loginForm.addEventListener('submit', this.handleLogin.bind(this));
+        if (registerForm) registerForm.addEventListener('submit', this.handleRegister.bind(this));
+        if (contactForm) contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const mensaje = document.getElementById('contactMessage').value.trim();
+            try {
+                await this.guardarContactoSupabase(nombre, email, mensaje);
+                this.showMessage('¡Mensaje enviado correctamente!', 'success');
+                contactForm.reset();
+            } catch (err) {
+                this.showMessage('Hubo un error al enviar el mensaje: ' + err.message, 'error');
             }
-        } catch (error) {
-            console.error('Login error:', error);
-            this.showMessage('Error al iniciar sesión', 'error');
-        }
-    }
-    
-    async handleRegister(e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        
-        const password = formData.get('password');
-        const confirmPassword = formData.get('confirmPassword');
-        
-        if (password !== confirmPassword) {
-            this.showMessage('Las contraseñas no coinciden', 'error');
-            return;
-        }
-        
-        try {
-            const response = await fetch('/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    username: formData.get('username'),
-                    email: formData.get('email'),
-                    password: password
-                })
-            });
-            
-            const data = await response.json();
-            
-            if (data.success) {
-                this.showMessage('Registro exitoso. Ahora puedes iniciar sesión.', 'success');
-                this.showAuthModal('login');
-            } else {
-                this.showMessage(data.message, 'error');
-            }
-        } catch (error) {
-            console.error('Register error:', error);
-            this.showMessage('Error al registrar usuario', 'error');
-        }
-    }
-    
-    async logout() {
-        try {
-            const response = await fetch('/logout', { method: 'POST' });
-            const data = await response.json();
-            
-            if (data.success) {
-                this.currentUser = null;
-                this.updateUI();
-                this.showMessage('Sesión cerrada exitosamente', 'success');
-            }
-        } catch (error) {
-            console.error('Logout error:', error);
-        }
-    }
+        });
     // ==================== USER AUTHENTICATION - EDITABLE SECTION END ====================
     
     // ==================== CHAT ASSISTANT - EDITABLE SECTION START ====================
