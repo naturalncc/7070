@@ -102,7 +102,7 @@ class HolisticApp {
         const password = form.querySelector('[name="password"]').value;
 
         try {
-            const { data, error } = await supabase.auth.signInWithPassword({ email: username, phone, password });
+            const { data, error } = await supabase.auth.signInWithPassword({ email: username, password });
             if (error) {
                 this.showMessage('Error al iniciar sesión: ' + error.message, 'error');
                 return;
@@ -131,21 +131,26 @@ class HolisticApp {
         }
 
         try {
-            const { data, error } = await supabase.auth.signUp({
-                email,
-                password,
-                options: { data: { username } }
-            });
+            // Insertar en tabla personalizada phone_contacts
+            const { data, error } = await supabase
+                .from('phone_contacts')
+                .insert([
+                    {
+                        nombre: username,
+                        correo_electronico: email,
+                        telefono: phone,
+                        fuente: 'web'
+                    }
+                ]);
             if (error) {
-                this.showMessage('Error al registrarse: ' + error.message, 'error');
+                this.showMessage('Error al registrar: ' + error.message, 'error');
                 return;
             }
-            this.currentUser = data.user;
             this.closeAuthModal();
-            await this.updateUI();
-            this.showMessage('Registro exitoso. Revisa tu correo para confirmar tu cuenta.', 'success');
+            this.showMessage('¡Registrado exitosamente!', 'success');
+            form.reset();
         } catch (error) {
-            this.showMessage('Error al registrarse: ' + error.message, 'error');
+            this.showMessage('Error al registrar: ' + error.message, 'error');
         }
     }
 
