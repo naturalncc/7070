@@ -136,17 +136,6 @@ class HolisticApp {
                 password,
                 options: { data: { username } }
             });
-             // Insertar en tabla personalizada
-  const { data, error } = await supabase
-    .from('phone_contacts') // usa el nombre de tu tabla personalizada
-    .insert([
-      {
-        nombre,
-        correo_electronico: correo,
-        telefono,
-        fuente: 'web'
-      }
-    ]);
             if (error) {
                 this.showMessage('Error al registrarse: ' + error.message, 'error');
                 return;
