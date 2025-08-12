@@ -1,4 +1,11 @@
 # netlify.toml
+[build]
+  functions = "netlify/functions"  # Ruta donde están tus funciones
+
+[functions]
+  # Aumenta el timeout para evitar cortes (el default es 10s)
+  chat.timeout = 30  # 30 segundos (ajusta según necesidad)
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
