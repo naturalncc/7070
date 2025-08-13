@@ -267,7 +267,7 @@ class HolisticApp {
         }
         // Add initial welcome message
         setTimeout(() => {
-            this.addChatMessage('assistant', '¡Hola! Soy MCU, tu asesor de salud holística. ¿Cómo puedo ayudarte hoy? Te invito a explorar nuestros productos y realizar nuestros test de salud para recomendaciones personalizadas.');
+            this.addChatMessage('assistant', '¡Hola! Soy NMC, tu asesor de salud holística. ¿Cómo puedo ayudarte hoy? Te invito a explorar nuestros productos y realizar nuestros test de salud para recomendaciones personalizadas.');
         }, 1000);
     }
     toggleChat() {
@@ -322,7 +322,7 @@ class HolisticApp {
         if (!messagesContainer) return;
         const typingDiv = document.createElement('div');
         typingDiv.className = 'message assistant typing-indicator';
-        typingDiv.innerHTML = 'MCU está escribiendo...';
+        typingDiv.innerHTML = 'NMC está escribiendo...';
         typingDiv.id = 'typingIndicator';
         messagesContainer.appendChild(typingDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -475,7 +475,7 @@ class HolisticApp {
                 <p><strong>${resultText}</strong></p>
                 <p>${recommendations}</p>
                 <button class="btn btn-primary" onclick="app.openChat('Hice el test ${testId} y obtuve: ${resultText}. ¿Qué productos me recomiendas?')">
-                    Consultar con MCU
+                    Consultar con NMC
                 </button>
             `;
             resultDiv.classList.add('show');
