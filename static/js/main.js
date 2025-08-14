@@ -27,7 +27,7 @@ class HolisticApp {
         this.setupMegaMenu();
         this.setupSearch();
         this.updateUI();
-        console.log('MCU Holistic App initialized successfully');
+        console.log('NMC  Holistic App initialized successfully');
     }
 
     // ==================== EVENTOS DE UI Y FORMULARIOS ====================
