@@ -22,7 +22,7 @@ window.categoriesData = [
                     "Reduce fatiga y cansancio"
                 ],
                 price: "$25.99",
-                image: "https://pixabay.com/get/gb01a0fbe3974cac8fb3c6c647d67fe3f720a5a874cccf0d5bc43958be28b37ee909eb0a7db1bd429a01fe002605026f16e6989fee057280adce6e7578bdfe9f8_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 102,
@@ -36,7 +36,7 @@ window.categoriesData = [
                     "Reduce el estrés mental"
                 ],
                 price: "$32.50",
-                image: "https://pixabay.com/get/gf2461db5bc7e8b3cb3c2c477be8397c0039d11212d3569a4330e63709ec21d5bc248c51f213b5c2ca43bbc7ce81c5ecaf7caf34f64e3bae61c2c741b7aab58ee_1280.jpg"
+            image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 103,
@@ -50,7 +50,7 @@ window.categoriesData = [
                     "Previene deficiencias"
                 ],
                 price: "$28.75",
-                image: "https://pixabay.com/get/g752d2eda61e878fec0428f69221b939809cfcdd2d21c083ce807d44f333101e19f7c0300c688bf7402b78c0f190a52bec6993687503b7a582ebaac0ef5085d5d_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -73,7 +73,7 @@ window.categoriesData = [
                     "100% orgánica certificada"
                 ],
                 price: "$45.00",
-                image: "https://pixabay.com/get/g76699470b7e11e0369d39773ac02a06d66b9b675dead7930d9ead4f9d6c29a0e3c67c9fd89956dece7b1fe4f74c67eb4b8083ca86528ce2a8d81a9ec0bac2a4c_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 202,
@@ -87,7 +87,7 @@ window.categoriesData = [
                     "Alivia dolores articulares"
                 ],
                 price: "$38.90",
-                image: "https://pixabay.com/get/gea3bffbf37b73db5323a8247d795bed05c7fd718850467f0f7de2f56fdcb438158708a698d2164a869bffb45889a91501e2beebaf0caba5d74eecc640ec6afc6_1280.jpg"
+        image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 203,
@@ -101,7 +101,7 @@ window.categoriesData = [
                     "Propiedades antiinflamatorias"
                 ],
                 price: "$22.50",
-                image: "https://pixabay.com/get/gcf0441c3c302dd9237b6208b0afeb9258ce933dc868b9f8952cf44660b87694f23de135ff3da06e40700004aecaa2bd2e14bfa52cbb563e956a597637c450468_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -124,7 +124,7 @@ window.categoriesData = [
                     "Calma irritaciones de la piel"
                 ],
                 price: "$35.00",
-                image: "https://pixabay.com/get/g13bd1a027a21235b6fe69aeee9df0c05063243135d56aecbc062f2e612f4a2ac0cc9ee472dbcbc1190b0b778f0cf7bd8eeb716a90d513894033cd5e26071cdca_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 302,
@@ -138,7 +138,7 @@ window.categoriesData = [
                     "Propiedades antifúngicas"
                 ],
                 price: "$29.90",
-                image: "https://pixabay.com/get/g3d62337f2a73bb4f2accccc9059ba075667bae653aaf65d663d687b239cfac79685e9b5ee0256d3cdd71c2bf5549c18b55d47910b91be61c258b57209f73269d_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 303,
@@ -152,7 +152,7 @@ window.categoriesData = [
                     "Alivia dolores musculares"
                 ],
                 price: "$26.75",
-                image: "https://pixabay.com/get/g8adbff416f361276def53f5e95effbf5746be99e837606438b5fbbee6ba62f2d6604360b4dfba03e989d766b67105d5773348d9e89ae459a7304ebbea02a5e53_1280.jpg"
+              image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -175,7 +175,7 @@ window.categoriesData = [
                     "Apoya salud intestinal"
                 ],
                 price: "$55.00",
-                image: "https://pixabay.com/get/g1ec49bdea152c1cc47a142c6b0de07bc58ecdd47f057ec68231eee7482c2002c9c7be2ae119f44ef9b1ec7eda2093b5d5bc9e1e4c7bdd6d9e13021a93fb10742_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 402,
@@ -189,7 +189,7 @@ window.categoriesData = [
                     "Apoya función pancreática"
                 ],
                 price: "$42.50",
-                image: "https://pixabay.com/get/g20980b0bafcc42d4fed462b43e9b88fd6ea1afa801ddf8911981e191f8c2c6e63b553f0b23ec26e05edebb1dfe389c49c7da4f584d56dc6aae3087c5a38eab2b_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 403,
@@ -203,7 +203,7 @@ window.categoriesData = [
                     "Rica en fibra soluble"
                 ],
                 price: "$31.90",
-                image: "https://pixabay.com/get/gbd756cba497e7df0681b8fcfdde214871185545f3994fdb1971f4258b798dc6e84a8b3fdb3337296bb7da1da236debcf85552001e8266e35b989546316e1463f_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -226,7 +226,7 @@ window.categoriesData = [
                     "Protege contra radicales libres"
                 ],
                 price: "$48.00",
-                image: "https://pixabay.com/get/ge10a8ce626f169e79d1239ddc6ab66ef6a42c028ca5da26f0effef214dbfcdf0024416f4b83cc257199521398d4273f236f5ab6ad3772bc3869196982367ce18_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 502,
@@ -240,7 +240,7 @@ window.categoriesData = [
                     "100% ingredientes naturales"
                 ],
                 price: "$39.90",
-                image: "https://pixabay.com/get/g08b66b334e153dc95d3b9143d1d165ea59fc279a8ebb1f272984d9dbdcaaccc756bbcc7a59cbf6824b905fda867f56b8a32e1fecddc6004a2aa4ef33ed14f171_1280.jpg"
+              image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 503,
@@ -254,7 +254,7 @@ window.categoriesData = [
                     "Deja piel suave y luminosa"
                 ],
                 price: "$27.50",
-                image: "https://pixabay.com/get/g84d2f41b10ed36ca54e310110da64d9e3ce0baad2e70ba26704522c962b55befaa2d89f9e9173d45bd5bfe0faeb5ed76fc3a0b0296f8d3124deb70142b141547_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -277,7 +277,7 @@ window.categoriesData = [
                     "No genera dependencia"
                 ],
                 price: "$24.90",
-                image: "https://pixabay.com/get/g07946325efb3baf22c3954b9568acd344ccd653442bef913b27e5b4edc2e63913ed94610584233d38688aed6f1f760d00a66470cb58ac15b5f9dc5dd2dd1899d_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 602,
@@ -291,7 +291,7 @@ window.categoriesData = [
                     "Sin efectos secundarios"
                 ],
                 price: "$33.75",
-                image: "https://pixabay.com/get/g16d9db295b51e6fee24489b78a3187630e47ba16d3ddc0d89c70c94ef19f51c84670f869b4bfa60ee22113d48e13a5c2562c893592fadc63b36ec2f9d1dbce70_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 603,
@@ -305,7 +305,7 @@ window.categoriesData = [
                     "Reduce estrés físico"
                 ],
                 price: "$29.90",
-                image: "https://pixabay.com/get/ge09233f2673a44d4b568fb7dbe3dc99f4317d7e8684fb9613686188f6eb41bdf4f05a4a321bc8994dc4f8284f8549fe8fd829d896b9a9ffbcb12351f37876b0b_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -328,7 +328,7 @@ window.categoriesData = [
                     "Fortalece sistema inmune"
                 ],
                 price: "$41.50",
-                image: "https://pixabay.com/get/gb01a0fbe3974cac8fb3c6c647d67fe3f720a5a874cccf0d5bc43958be28b37ee909eb0a7db1bd429a01fe002605026f16e6989fee057280adce6e7578bdfe9f8_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 702,
@@ -342,7 +342,7 @@ window.categoriesData = [
                     "Energía sostenida sin nerviosismo"
                 ],
                 price: "$55.00",
-                image: "https://pixabay.com/get/gf2461db5bc7e8b3cb3c2c477be8397c0039d11212d3569a4330e63709ec21d5bc248c51f213b5c2ca43bbc7ce81c5ecaf7caf34f64e3bae61c2c741b7aab58ee_1280.jpg"
+            image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 703,
@@ -356,7 +356,7 @@ window.categoriesData = [
                     "Apoya procesos de detox"
                 ],
                 price: "$37.90",
-                image: "https://pixabay.com/get/g752d2eda61e878fec0428f69221b939809cfcdd2d21c083ce807d44f333101e19f7c0300c688bf7402b78c0f190a52bec6993687503b7a582ebaac0ef5085d5d_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -379,7 +379,7 @@ window.categoriesData = [
                     "Mejora función cognitiva"
                 ],
                 price: "$65.00",
-                image: "https://pixabay.com/get/g76699470b7e11e0369d39773ac02a06d66b9b675dead7930d9ead4f9d6c29a0e3c67c9fd89956dece7b1fe4f74c67eb4b8083ca86528ce2a8d81a9ec0bac2a4c_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 802,
@@ -393,7 +393,7 @@ window.categoriesData = [
                     "Rica en aminoácidos esenciales"
                 ],
                 price: "$34.90",
-                image: "https://pixabay.com/get/gea3bffbf37b73db5323a8247d795bed05c7fd718850467f0f7de2f56fdcb438158708a698d2164a869bffb45889a91501e2beebaf0caba5d74eecc640ec6afc6_1280.jpg"
+        image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 803,
@@ -407,7 +407,7 @@ window.categoriesData = [
                     "Apoya función mitocondrial"
                 ],
                 price: "$59.90",
-                image: "https://pixabay.com/get/gcf0441c3c302dd9237b6208b0afeb9258ce933dc868b9f8952cf44660b87694f23de135ff3da06e40700004aecaa2bd2e14bfa52cbb563e956a597637c450468_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -430,7 +430,7 @@ window.categoriesData = [
                     "Previene desgaste articular"
                 ],
                 price: "$52.50",
-                image: "https://pixabay.com/get/g13bd1a027a21235b6fe69aeee9df0c05063243135d56aecbc062f2e612f4a2ac0cc9ee472dbcbc1190b0b778f0cf7bd8eeb716a90d513894033cd5e26071cdca_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 902,
@@ -444,7 +444,7 @@ window.categoriesData = [
                     "Ingredientes 100% naturales"
                 ],
                 price: "$44.90",
-                image: "https://pixabay.com/get/g3d62337f2a73bb4f2accccc9059ba075667bae653aaf65d663d687b239cfac79685e9b5ee0256d3cdd71c2bf5549c18b55d47910b91be61c258b57209f73269d_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 903,
@@ -458,7 +458,7 @@ window.categoriesData = [
                     "Alta biodisponibilidad"
                 ],
                 price: "$48.75",
-                image: "https://pixabay.com/get/g8adbff416f361276def53f5e95effbf5746be99e837606438b5fbbee6ba62f2d6604360b4dfba03e989d766b67105d5773348d9e89ae459a7304ebbea02a5e53_1280.jpg"
+              image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -481,7 +481,7 @@ window.categoriesData = [
                     "Sin estimulantes artificiales"
                 ],
                 price: "$39.90",
-                image: "https://pixabay.com/get/g1ec49bdea152c1cc47a142c6b0de07bc58ecdd47f057ec68231eee7482c2002c9c7be2ae119f44ef9b1ec7eda2093b5d5bc9e1e4c7bdd6d9e13021a93fb10742_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1002,
@@ -495,7 +495,7 @@ window.categoriesData = [
                     "Apoya metabolismo saludable"
                 ],
                 price: "$42.50",
-                image: "https://pixabay.com/get/g20980b0bafcc42d4fed462b43e9b88fd6ea1afa801ddf8911981e191f8c2c6e63b553f0b23ec26e05edebb1dfe389c49c7da4f584d56dc6aae3087c5a38eab2b_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1003,
@@ -509,7 +509,7 @@ window.categoriesData = [
                     "Baja en calorías"
                 ],
                 price: "$28.90",
-                image: "https://pixabay.com/get/gbd756cba497e7df0681b8fcfdde214871185545f3994fdb1971f4258b798dc6e84a8b3fdb3337296bb7da1da236debcf85552001e8266e35b989546316e1463f_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -532,7 +532,7 @@ window.categoriesData = [
                     "100% fuente vegetal"
                 ],
                 price: "$58.90",
-                image: "https://pixabay.com/get/ge10a8ce626f169e79d1239ddc6ab66ef6a42c028ca5da26f0effef214dbfcdf0024416f4b83cc257199521398d4273f236f5ab6ad3772bc3869196982367ce18_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1102,
@@ -546,7 +546,7 @@ window.categoriesData = [
                     "Apoya función cognitiva"
                 ],
                 price: "$35.75",
-                image: "https://pixabay.com/get/g08b66b334e153dc95d3b9143d1d165ea59fc279a8ebb1f272984d9dbdcaaccc756bbcc7a59cbf6824b905fda867f56b8a32e1fecddc6004a2aa4ef33ed14f171_1280.jpg"
+              image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1103,
@@ -560,7 +560,7 @@ window.categoriesData = [
                     "Mejora calidad del sueño"
                 ],
                 price: "$49.90",
-                image: "https://pixabay.com/get/g84d2f41b10ed36ca54e310110da64d9e3ce0baad2e70ba26704522c962b55befaa2d89f9e9173d45bd5bfe0faeb5ed76fc3a0b0296f8d3124deb70142b141547_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -583,7 +583,7 @@ window.categoriesData = [
                     "Esencial durante embarazo"
                 ],
                 price: "$32.90",
-                image: "https://pixabay.com/get/g07946325efb3baf22c3954b9568acd344ccd653442bef913b27e5b4edc2e63913ed94610584233d38688aed6f1f760d00a66470cb58ac15b5f9dc5dd2dd1899d_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1202,
@@ -597,7 +597,7 @@ window.categoriesData = [
                     "Tradicional para salud femenina"
                 ],
                 price: "$38.50",
-                image: "https://pixabay.com/get/g16d9db295b51e6fee24489b78a3187630e47ba16d3ddc0d89c70c94ef19f51c84670f869b4bfa60ee22113d48e13a5c2562c893592fadc63b36ec2f9d1dbce70_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1203,
@@ -611,7 +611,7 @@ window.categoriesData = [
                     "Promueve belleza natural"
                 ],
                 price: "$55.90",
-                image: "https://pixabay.com/get/ge09233f2673a44d4b568fb7dbe3dc99f4317d7e8684fb9613686188f6eb41bdf4f05a4a321bc8994dc4f8284f8549fe8fd829d896b9a9ffbcb12351f37876b0b_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -634,7 +634,7 @@ window.categoriesData = [
                     "Pureza garantizada sin mercurio"
                 ],
                 price: "$43.90",
-                image: "https://pixabay.com/get/gb01a0fbe3974cac8fb3c6c647d67fe3f720a5a874cccf0d5bc43958be28b37ee909eb0a7db1bd429a01fe002605026f16e6989fee057280adce6e7578bdfe9f8_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1302,
@@ -648,7 +648,7 @@ window.categoriesData = [
                     "Protege contra estrés oxidativo"
                 ],
                 price: "$52.90",
-                image: "https://pixabay.com/get/gf2461db5bc7e8b3cb3c2c477be8397c0039d11212d3569a4330e63709ec21d5bc248c51f213b5c2ca43bbc7ce81c5ecaf7caf34f64e3bae61c2c741b7aab58ee_1280.jpg"
+            image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1303,
@@ -662,7 +662,7 @@ window.categoriesData = [
                     "Tradicionalmente usado por siglos"
                 ],
                 price: "$36.75",
-                image: "https://pixabay.com/get/g752d2eda61e878fec0428f69221b939809cfcdd2d21c083ce807d44f333101e19f7c0300c688bf7402b78c0f190a52bec6993687503b7a582ebaac0ef5085d5d_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -685,7 +685,7 @@ window.categoriesData = [
                     "Apoya desintoxicación natural"
                 ],
                 price: "$38.90",
-                image: "https://pixabay.com/get/g76699470b7e11e0369d39773ac02a06d66b9b675dead7930d9ead4f9d6c29a0e3c67c9fd89956dece7b1fe4f74c67eb4b8083ca86528ce2a8d81a9ec0bac2a4c_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1402,
@@ -699,7 +699,7 @@ window.categoriesData = [
                     "Protege contra envejecimiento"
                 ],
                 price: "$59.90",
-                image: "https://pixabay.com/get/gea3bffbf37b73db5323a8247d795bed05c7fd718850467f0f7de2f56fdcb438158708a698d2164a869bffb45889a91501e2beebaf0caba5d74eecc640ec6afc6_1280.jpg"
+        image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1403,
@@ -713,7 +713,7 @@ window.categoriesData = [
                     "Regula niveles de glucosa"
                 ],
                 price: "$24.90",
-                image: "https://pixabay.com/get/gcf0441c3c302dd9237b6208b0afeb9258ce933dc868b9f8952cf44660b87694f23de135ff3da06e40700004aecaa2bd2e14bfa52cbb563e956a597637c450468_1280.jpg"
+                image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     },
@@ -736,7 +736,7 @@ window.categoriesData = [
                     "Sin colorantes artificiales"
                 ],
                 price: "$29.90",
-                image: "https://pixabay.com/get/g13bd1a027a21235b6fe69aeee9df0c05063243135d56aecbc062f2e612f4a2ac0cc9ee472dbcbc1190b0b778f0cf7bd8eeb716a90d513894033cd5e26071cdca_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1502,
@@ -750,7 +750,7 @@ window.categoriesData = [
                     "Cepas específicamente seleccionadas"
                 ],
                 price: "$41.50",
-                image: "https://pixabay.com/get/g3d62337f2a73bb4f2accccc9059ba075667bae653aaf65d663d687b239cfac79685e9b5ee0256d3cdd71c2bf5549c18b55d47910b91be61c258b57209f73269d_1280.jpg"
+               image: "https://i.imgur.com/ZG5huWr.png"
             },
             {
                 id: 1503,
@@ -764,7 +764,7 @@ window.categoriesData = [
                     "Sin efectos secundarios"
                 ],
                 price: "$26.90",
-                image: "https://pixabay.com/get/g8adbff416f361276def53f5e95effbf5746be99e837606438b5fbbee6ba62f2d6604360b4dfba03e989d766b67105d5773348d9e89ae459a7304ebbea02a5e53_1280.jpg"
+              image: "https://i.imgur.com/ZG5huWr.png"
             }
         ]
     }
