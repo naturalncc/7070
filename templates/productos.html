@@ -4,15 +4,15 @@
     <!-- ==================== META TAGS - EDITABLE SECTION START ==================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de productos naturales MCU. Suplementos vitamínicos, hierbas medicinales, aceites esenciales y más para tu salud holística.">
-    <meta name="keywords" content="productos naturales, suplementos MCU, hierbas medicinales, aceites esenciales, vitaminas, probióticos, medicina holística">
-    <title>Productos Naturales - MCU Medicina Holística</title>
+    <meta name="description" content="Catálogo completo de productos naturales NMC . Suplementos vitamínicos, hierbas medicinales, aceites esenciales y más para tu salud holística.">
+    <meta name="keywords" content="productos naturales, suplementos NMC , hierbas medicinales, aceites esenciales, vitaminas, probióticos, medicina holística">
+    <title>Productos Naturales - NMC  Medicina Holística</title>
     <!-- ==================== META TAGS - EDITABLE SECTION END ==================== -->
     
     <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION START ==================== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   <link rel="stylesheet" href="static/css/styles.css">
     <!-- ==================== EXTERNAL RESOURCES - EDITABLE SECTION END ==================== -->
 </head>
 <body>
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="navbar">
                     <a href="/" class="logo">
-                        <i class="fas fa-leaf"></i> MCU
+                        <i class="fas fa-leaf"></i> NMC 
                     </a>
                     
                     <ul class="nav-menu">
@@ -257,7 +257,7 @@
     <!-- ==================== FEATURED BENEFITS - EDITABLE SECTION START ==================== -->
     <section class="featured-benefits" style="padding: var(--spacing-xl) 0;">
         <div class="container">
-            <h2 class="section-title">¿Por Qué Elegir MCU?</h2>
+            <h2 class="section-title">¿Por Qué Elegir NMC ?</h2>
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-lg">
                     <div class="benefit-item text-center">
@@ -308,11 +308,11 @@
         <div class="container text-center">
             <h2 style="color: var(--color-white); margin-bottom: var(--spacing-md);">¿No Encuentras lo que Buscas?</h2>
             <p style="color: var(--color-white); font-size: var(--font-size-large); margin-bottom: var(--spacing-lg); opacity: 0.9;">
-                Nuestro asistente virtual MCU puede ayudarte a encontrar el producto perfecto para tus necesidades específicas
+                Nuestro asistente virtual NMC  puede ayudarte a encontrar el producto perfecto para tus necesidades específicas
             </p>
             <div>
-                <button class="btn btn-white btn-lg me-3" onclick="openChat('Hola MCU, estoy buscando productos específicos para mis necesidades de salud. ¿Puedes ayudarme a encontrar lo que necesito?')" style="background-color: var(--color-white); color: var(--color-apple-green);">
-                    <i class="fas fa-comments"></i> Consultar con MCU
+                <button class="btn btn-white btn-lg me-3" onclick="openChat('Hola NMC , estoy buscando productos específicos para mis necesidades de salud. ¿Puedes ayudarme a encontrar lo que necesito?')" style="background-color: var(--color-white); color: var(--color-apple-green);">
+                    <i class="fas fa-comments"></i> Consultar con NMC 
                 </button>
                 <a href="/test-rapidos" class="btn btn-outline btn-lg" style="border-color: var(--color-white); color: var(--color-white);">
                     <i class="fas fa-clipboard-check"></i> Hacer Test de Salud
@@ -327,7 +327,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MCU - Medicina Holística</h3>
+                    <h3>NMC  - Medicina Holística</h3>
                     <p>Tu tienda especializada en productos naturales de la más alta calidad para el bienestar integral.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -355,15 +355,15 @@
                 
                 <div class="footer-section">
                     <h3>Servicio al Cliente</h3>
-                    <p><i class="fas fa-envelope"></i> info@mcu007.com</p>
+                    <p><i class="fas fa-envelope"></i> info@NMC 007.com</p>
                     <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
                     <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM</p>
-                    <p><i class="fas fa-globe"></i> https://mcu007.netlify.app</p>
+                    <p><i class="fas fa-globe"></i> https://NMC 007.netlify.app</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 MCU - Medicina Holística. Todos los derechos reservados. | Productos de calidad certificada</p>
+                <p>&copy; 2024 NMC  - Medicina Holística. Todos los derechos reservados. | Productos de calidad certificada</p>
             </div>
         </div>
     </footer>
@@ -374,7 +374,7 @@
         <button class="chat-toggle" id="chatToggle">💬</button>
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">
-                <h4>MCU - Tu Asesor de Salud</h4>
+                <h4>NMC  - Tu Asesor de Salud</h4>
                 <small>Especialista en Medicina Holística</small>
             </div>
             <div class="chat-messages" id="chatMessages"></div>
@@ -435,8 +435,10 @@
 
     <!-- ==================== JAVASCRIPT - EDITABLE SECTION START ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/Categorias.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+   <!-- Categories Data -->
+    <script src="static/js/Categorias.js"></script>
+    <!-- Main Application JS -->
+    <script src="static/js/main.js"></script>
     
     <script>
         // Enhanced product filtering functionality
@@ -471,21 +473,29 @@
             }
         }
         
-        // Auto-update products count when app loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for app to initialize and load products
-            setTimeout(() => {
-                if (window.app && window.app.products) {
-                    updateProductsCount(window.app.filteredProducts.length, window.app.products.length);
-                }
-                
-                // Update count when search is performed
-                const originalPerformSearch = window.app.performSearch;
-                window.app.performSearch = function() {
-                    originalPerformSearch.call(this);
-                    updateProductsCount(this.filteredProducts.length, this.products.length);
-                };
-            }, 1000);
+       // Actualizar automáticamente el conteo de productos cuando la aplicación se carga
+document.addEventListener('DOMContentLoaded', function() {
+    // Esperar a que la aplicación se inicialice y cargue los productos
+    setTimeout(() => {
+        // Verificar si el objeto 'app' y sus 'products' están disponibles
+        if (window.app && window.app.products) {
+            // Actualizar el conteo de productos mostrados
+            updateProductsCount(window.app.filteredProducts.length, window.app.products.length);
+        }
+        
+        // Actualizar el conteo cuando se realiza una búsqueda, SOLO si el objeto 'app' y 'performSearch' existen
+        if (window.app && typeof window.app.performSearch === 'function') {
+            // Guardar una referencia a la función de búsqueda original
+            const busquedaOriginal = window.app.performSearch;
+            // Reemplazar la función de búsqueda con una nueva versión
+            window.app.performSearch = function() {
+                // Llamar a la función de búsqueda original para mantener su comportamiento
+                busquedaOriginal.call(this);
+                // Luego, actualizar el conteo de productos mostrados
+                updateProductsCount(this.filteredProducts.length, this.products.length);
+            };
+        }
+    }, 1000); // Esperar 1 segundo para asegurar que la aplicación esté cargada
         });
     </script>
     <!-- ==================== JAVASCRIPT - EDITABLE SECTION END ==================== -->
