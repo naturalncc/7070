@@ -393,37 +393,39 @@ class HolisticApp {
         this.renderProducts();
     }
     renderProducts() {
-        const productsContainer = document.getElementById('productsContainer');
-        if (!productsContainer) return;
-        if (this.filteredProducts.length === 0) {
-            productsContainer.innerHTML = `
-                <div class="text-center p-lg">
-                    <h3>No se encontraron productos</h3>
-                    <p>Intenta con otros términos de búsqueda o explora nuestras categorías.</p>
-                </div>
-            `;
-            return;
-        }
-        const productsHTML = this.filteredProducts.map(product => `
-            <div class="product-card fade-in">
-                <img src="${product.image}" alt="${product.name}" class="product-image" 
-                     onerror="this.src='https://via.placeholder.com/250x250/8fbc8f/ffffff?text=Producto'">
-                <div class="product-content">
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-description">${product.description}</p>
-                    <div class="product-benefits">
-                        <h4>Beneficios:</h4>
-                        <ul class="benefits-list">
-                            ${product.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="product-price">${product.price}</div>
-                </div>
-            </div>
-        `).join('');
-        productsContainer.innerHTML = productsHTML;
+    const productsContainer = document.getElementById('productsContainer');
+    if (!productsContainer) return;
+    
+    if (this.filteredProducts.length === 0) {
+        productsContainer.innerHTML = `
+            <div class="text-center p-lg">
+                <h3>No se encontraron productos</h3>
+                <p>Intenta con otros términos de búsqueda.</p>
+            </div>`;
+        return;
     }
 
+    const productsHTML = this.filteredProducts.map(product => `
+        <div class="product-card fade-in">
+            <img src="${product.image || 'https://i.imgur.com/h4HUIPu.png'}" 
+                 alt="${product.name}" 
+                 class="product-image"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://i.imgur.com/h4HUIPu.png'">
+            <div class="product-content">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <div class="product-benefits">
+                    <h4>Beneficios:</h4>
+                    <ul>${product.benefits.map(benefit => `<li>${benefit}</li>`).join('')}</ul>
+                </div>
+                <div class="product-price">${product.price}</div>
+            </div>
+        </div>
+    `).join('');
+
+    productsContainer.innerHTML = productsHTML;
+}
     // ==================== TESTS FUNCTIONALITY ====================
     toggleTest(testItem) {
         const testContent = testItem.querySelector('.test-content');
