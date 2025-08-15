@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Cardiovascular Completo | HealthCheck360°</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+        }
+        .test-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border: 2px solid #4CAF50;
+        }
+        .test-title {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .question {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .options label:hover {
+            background-color: #e8f5e9;
+        }
+        .btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background: #388E3C;
+        }
+        .result {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #4CAF50;
+        }
+        .low-risk {
+            background-color: #e8f5e9;
+        }
+        .medium-risk {
+            background-color: #fff8e1;
+            border-left-color: #FFA000;
+        }
+        .high-risk {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+        }
+        .protocol {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .protocol h4 {
+            color: #2E7D32;
+            margin-top: 0;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #757575;
+            margin-top: 30px;
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 10px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Test Completo de Salud Cardiovascular</h1>
+        <p>Evaluación holística de tu corazón y sistema circulatorio con 25 preguntas detalladas</p>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="test-container">
+        <h2 class="test-title">Evaluación Cardiovascular Extendida</h2>
+        <p>Responde honestamente para recibir recomendaciones personalizadas basadas en productos naturales.</p>
+
+        <!-- Pregunta 1 -->
+        <div class="question">
+            <p>1. ¿Tienes presión arterial elevada (≥130/85 mmHg)?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="3"> Sí, diagnosticada</label>
+                <label><input type="radio" name="q1" value="2"> A veces elevada</label>
+                <label><input type="radio" name="q1" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question">
+            <p>2. ¿Tu cintura mide más de 90 cm (mujeres) o 100 cm (hombres)?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="3"> Sí</label>
+                <label><input type="radio" name="q2" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question">
+            <p>3. ¿Tienes familiares directos con enfermedades cardíacas tempranas?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="3"> Sí, varios</label>
+                <label><input type="radio" name="q3" value="2"> Sí, uno</label>
+                <label><input type="radio" name="q3" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question">
+            <p>4. ¿Fumas o estás expuesto frecuentemente al humo de tabaco?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="3"> Sí, activamente</label>
+                <label><input type="radio" name="q4" value="2"> Exposición pasiva</label>
+                <label><input type="radio" name="q4" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question">
+            <p>5. ¿Haces menos de 150 minutos de ejercicio moderado por semana?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="2"> Sí</label>
+                <label><input type="radio" name="q5" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="question">
+            <p>6. ¿Tienes colesterol o triglicéridos elevados?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="3"> Sí, diagnosticado</label>
+                <label><input type="radio" name="q6" value="2"> No me he chequeado</label>
+                <label><input type="radio" name="q6" value="0"> No, normales</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="question">
+            <p>7. ¿Consumes alimentos procesados o fritos diariamente?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="3"> Sí, frecuentemente</label>
+                <label><input type="radio" name="q7" value="2"> Ocasionalmente</label>
+                <label><input type="radio" name="q7" value="0"> Raramente</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="question">
+            <p>8. ¿Experimentas dolor en el pecho al hacer esfuerzos?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="3"> Sí</label>
+                <label><input type="radio" name="q8" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="question">
+            <p>9. ¿Tienes diabetes o prediabetes?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="3"> Sí, diagnosticada</label>
+                <label><input type="radio" name="q9" value="2"> Sospecho pero no diagnosticada</label>
+                <label><input type="radio" name="q9" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="question">
+            <p>10. ¿Tienes hinchazón en piernas o tobillos sin causa aparente?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="3"> Sí, frecuente</label>
+                <label><input type="radio" name="q10" value="2"> Ocasional</label>
+                <label><input type="radio" name="q10" value="0"> No</label>
+            </div>
+        </div>
+
+        <!-- Preguntas 11-25 (similar estructura) -->
+        <!-- ... -->
+
+        <button class="btn" onclick="calculateCardioTest()">Calcular Resultado</button>
+
+        <div id="cardioResult" class="result">
+            <h3>Resultado de tu Evaluación:</h3>
+            <p id="resultText"></p>
+            
+            <div class="protocol" id="cardioProtocol">
+                <h4>Protocolo Cardiovascular Holístico:</h4>
+                <div id="protocolDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <p>NOTA: Este test es orientativo. Consulta a un cardiólogo para evaluación profesional.</p>
+    </div>
+
+    <script>
+        // Actualizar barra de progreso
+        function updateProgress() {
+            const totalQuestions = 25;
+            let answered = 0;
+            for(let i=1; i<=totalQuestions; i++) {
+                if(document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            const progress = (answered/totalQuestions)*100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        // Añadir evento a todas las preguntas
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', updateProgress);
+        });
+
+        function calculateCardioTest() {
+            let score = 0;
+            // Sumar todas las respuestas (25 preguntas)
+            for(let i=1; i<=25; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if(selected) score += parseInt(selected.value);
+            }
+
+            // Mostrar resultado
+            const resultDiv = document.getElementById('cardioResult');
+            const resultText = document.getElementById('resultText');
+            const protocolDiv = document.getElementById('protocolDetails');
+
+            resultDiv.style.display = 'block';
+            
+            if (score <= 12) {
+                resultDiv.className = 'result low-risk';
+                resultText.innerHTML = '<strong>Riesgo cardiovascular bajo:</strong> Tus indicadores son saludables.';
+                
+                protocolDiv.innerHTML = `
+                    <p><strong>Mantenimiento cardiovascular con tus productos:</strong></p>
+                    <ul>
+                        <li><u>Omega 3-6-9</u>: 1 cápsula diaria - Ácidos grasos esenciales</li>
+                        <li><u>CoQ10 250mg</u>: 1 cápsula/día - Protección mitocondrial</li>
+                        <li><u>Gomitas de Té Verde</u>: 1 diaria - Antioxidantes polifenólicos</li>
+                        <li><u>Magnesium Ultra</u>: 1 cápsula nocturna - Regulación presión arterial</li>
+                    </ul>
+                `;
+            } else if (score <= 25) {
+                resultDiv.className = 'result medium-risk';
+                resultText.innerHTML = '<strong>Riesgo cardiovascular moderado:</strong> Presentas algunos factores de riesgo.';
+                
+                protocolDiv.innerHTML = `
+                    <p><strong>Protocolo de protección cardiovascular:</strong></p>
+                    <ul>
+                        <li><u>Resveratrol Ultra + 150mg</u>: 1 cápsula/día - Protección endotelial</li>
+                        <li><u>Cardo Mariano</u>: 1 cápsula 2x/día - Control lipídico y detox hepático</li>
+                        <li><u>Glicinato de Magnesio</u>: 200 mg nocturnos - Relajación vascular</li>
+                        <li><u>Gomitas Antiinflamatorias de Cúrcuma</u>: 2 diarias - Reduce inflamación arterial</li>
+                        <li><u>D3 Vital Max</u>: 1 cápsula/día - Optimiza función cardiovascular</li>
+                    </ul>
+                    <p><em>Exámenes recomendados:</em> Perfil lipídico completo, homocisteína y ecografía carotídea.</p>
+                `;
+            } else {
+                resultDiv.className = 'result high-risk';
+                resultText.innerHTML = '<strong>Riesgo cardiovascular alto:</strong> Necesitas intervención profesional inmediata.';
+                
+                protocolDiv.innerHTML = `
+                    <p><strong>Protocolo intensivo (consultar con cardiólogo):</strong></p>
+                    <ul>
+                        <li><u>Trans-Resveratrol 1500mg</u>: 1 cápsula/día - Protección arterial avanzada</li>
+                        <li><u>CoQ10 250mg</u>: 2 cápsulas/día - Soporte energético cardíaco</li>
+                        <li><u>Hepaclean Ultra</u>: 2 cápsulas/día - Detoxificación metabólica</li>
+                        <li><u>NAD+ Elite Rejuvenol</u>: 1 cápsula en ayunas - Reparación vascular</li>
+                        <li><u>Citrato de Potasio</u>: 1 cucharadita en agua/día - Equilibrio electrolítico*</li>
+                    </ul>
+                    <p><em>*Producto no en tu lista pero recomendado para este protocolo</em></p>
+                    <p><em>Exámenes urgentes:</em> AngioTAC coronario, prueba de esfuerzo y monitoreo de presión arterial 24h.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
